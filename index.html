@@ -1,0 +1,3194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azazi Foundation | Empowering Communities, Uplifting Futures</title>
+  <meta name="description" content="Official website of Azazi Foundation. Dedicated to youth mentorship, child outreach, welfare facility support, and community empowerment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #F2D06B;
+      --gold-bright: #FACC15;
+      --gold-hover: #F5C518;
+      --gold-dark: #9A7215;
+      --gold-deep: #B68621;
+      --black: #0D0D0D;
+      --dark: #141414;
+      --dark-2: #121212;
+      --cream: #FAFAF8;
+      --white: #FFFFFF;
+      --neutral-100: #f5f5f5;
+      --neutral-200: #e5e5e5;
+      --neutral-300: #d4d4d4;
+      --neutral-400: #a3a3a3;
+      --neutral-500: #737373;
+      --neutral-600: #525252;
+      --neutral-700: #404040;
+      --neutral-800: #262626;
+      --red: #dc2626;
+      --emerald: #059669;
+      --font-brand: 'Cinzel', 'Playfair Display', Georgia, serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      --radius: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    ::selection { background: var(--gold-bright); color: var(--black); }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+    button:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ========== UTILITY ========== */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0;
+      margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border-width: 0;
+    }
+    .sr-only:focus {
+      position: fixed; top: 12px; left: 12px; z-index: 100;
+      width: auto; height: auto; padding: 8px 16px;
+      margin: 0; overflow: visible; clip: auto;
+      background: var(--gold-bright); color: var(--black);
+      font-weight: 700; border-radius: 8px;
+    }
+
+    .container { max-width: 80rem; margin: 0 auto; padding: 0 1rem; }
+    @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+    @media (min-width: 1024px) { .container { padding: 0 2rem; } }
+
+    .font-serif { font-family: var(--font-serif); }
+    .font-brand { font-family: var(--font-brand); }
+
+    .text-gold { color: var(--gold-bright); }
+    .text-gold-light { color: var(--gold-light); }
+    .text-gold-dark { color: var(--gold-dark); }
+
+    .bg-black { background-color: var(--black); }
+    .bg-dark { background-color: var(--dark); }
+    .bg-cream { background-color: var(--cream); }
+
+    .section-padding { padding: 4rem 0; }
+    @media (min-width: 640px) { .section-padding { padding: 6rem 0; } }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+
+    @media (min-width: 640px) {
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 768px) {
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.875rem 1.5rem; border-radius: var(--radius);
+      font-weight: 700; font-size: 0.875rem;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: var(--gold-bright); color: var(--black);
+      box-shadow: 0 4px 14px rgba(250, 204, 21, 0.2);
+    }
+    .btn-primary:hover { background: var(--gold-hover); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05); color: white;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--gold-bright); }
+
+    .btn-dark {
+      background: var(--black); color: white;
+    }
+    .btn-dark:hover { background: #1f1f1f; }
+
+    .btn-outline {
+      background: white; color: var(--black);
+      border: 1px solid var(--black);
+    }
+    .btn-outline:hover { background: var(--neutral-100); }
+
+    .placeholder-badge {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      padding: 0.125rem 0.625rem; border-radius: 9999px;
+      font-size: 0.6875rem; font-weight: 500;
+      background: rgba(250, 204, 21, 0.2);
+      color: #856404;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .placeholder-badge svg { width: 0.75rem; height: 0.75rem; color: var(--gold-deep); }
+
+    .section-header { max-width: 48rem; margin-bottom: 3rem; }
+    .section-header.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .section-header .eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.2em; margin-bottom: 0.75rem;
+      color: var(--gold-dark);
+    }
+    .section-header.dark .eyebrow { color: var(--gold-light); }
+    .section-header .eyebrow .line {
+      width: 1.5rem; height: 2px; background: var(--gold);
+    }
+    .section-header h2 {
+      font-family: var(--font-serif); font-size: 1.875rem; font-weight: 700;
+      line-height: 1.2; letter-spacing: -0.025em; color: var(--black);
+    }
+    .section-header.dark h2 { color: white; }
+    @media (min-width: 640px) { .section-header h2 { font-size: 2.25rem; } }
+    @media (min-width: 1024px) { .section-header h2 { font-size: 2.65rem; } }
+    .section-header p {
+      margin-top: 1rem; font-size: 1rem; line-height: 1.7;
+      color: var(--neutral-600);
+    }
+    .section-header.dark p { color: var(--neutral-300); }
+    @media (min-width: 640px) { .section-header p { font-size: 1.125rem; } }
+
+    /* ========== TOP BAR ========== */
+    .top-bar {
+      background: var(--black); color: var(--neutral-300);
+      font-size: 0.75rem; border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .top-bar .container {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 0.5rem; padding-top: 0.5rem; padding-bottom: 0.5rem;
+    }
+    .top-bar-left { display: flex; align-items: center; gap: 0.5rem; }
+    .top-bar-dot {
+      display: inline-block; width: 0.5rem; height: 0.5rem;
+      border-radius: 50%; background: var(--gold-bright);
+    }
+    .top-bar strong { color: var(--gold-light); font-weight: 600; }
+    .top-bar-right { display: none; align-items: center; gap: 1.25rem; color: var(--neutral-400); }
+    @media (min-width: 640px) { .top-bar-right { display: flex; } }
+    .top-bar-right button { transition: color 0.2s; }
+    .top-bar-right button:hover { color: var(--gold-bright); }
+    .top-bar-sep { color: var(--neutral-700); }
+
+    /* ========== HEADER ========== */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--black);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 0.875rem 0;
+      transition: var(--transition);
+    }
+    .site-header.scrolled {
+      background: rgba(13, 13, 13, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-xl);
+      border-bottom-color: rgba(212, 175, 55, 0.3);
+      padding: 0.625rem 0;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-btn {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-align: left; padding: 0.25rem; border-radius: 0.5rem;
+      transition: var(--transition);
+    }
+    .logo-btn:hover .logo-crest { transform: scale(1.05); }
+    .logo-crest { transition: transform 0.3s; flex-shrink: 0; }
+    .logo-text-main {
+      display: block; font-family: var(--font-brand);
+      font-size: 1rem; font-weight: 700; letter-spacing: 0.14em;
+      background: linear-gradient(90deg, #F5DC7A, #D4AF37, #F2D06B);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @media (min-width: 640px) { .logo-text-main { font-size: 1.125rem; } }
+    .logo-text-sub {
+      display: block; font-size: 10px; text-transform: uppercase;
+      letter-spacing: 0.22em; color: var(--neutral-400);
+    }
+
+    .main-nav { display: none; align-items: center; gap: 0.25rem; }
+    @media (min-width: 1280px) { .main-nav { display: flex; } }
+    .nav-link {
+      position: relative; padding: 0.5rem 0.875rem;
+      font-size: 0.875rem; font-weight: 500;
+      border-radius: 0.5rem; color: var(--neutral-200);
+      transition: var(--transition);
+    }
+    .nav-link:hover { color: var(--gold-light); background: rgba(255,255,255,0.05); }
+    .nav-link.active { color: var(--gold-bright); background: rgba(255,255,255,0.05); }
+    .nav-link.active::after {
+      content: ''; position: absolute; bottom: 4px; left: 0.875rem; right: 0.875rem;
+      height: 2px; border-radius: 9999px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+    }
+
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .header-cta { display: none; }
+    @media (min-width: 640px) { .header-cta { display: inline-flex; } }
+    .header-cta svg { width: 1rem; height: 1rem; }
+
+    .mobile-toggle {
+      padding: 0.625rem; border-radius: 0.5rem;
+      color: var(--neutral-200); transition: var(--transition);
+    }
+    .mobile-toggle:hover { color: var(--gold-bright); background: rgba(255,255,255,0.1); }
+    .mobile-toggle svg { width: 1.5rem; height: 1.5rem; }
+    @media (min-width: 1280px) { .mobile-toggle { display: none; } }
+
+    /* ========== MOBILE NAV ========== */
+    .mobile-nav {
+      display: none; background: var(--dark-2);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 0.75rem 1rem 1.5rem;
+      box-shadow: var(--shadow-xl);
+    }
+    .mobile-nav.open { display: block; }
+    @media (min-width: 1280px) { .mobile-nav.open { display: none; } }
+    .mobile-nav-link {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; padding: 0.75rem 1rem; margin-bottom: 0.375rem;
+      border-radius: 0.75rem; text-align: left;
+      font-size: 1rem; font-weight: 500; color: var(--neutral-200);
+      transition: var(--transition);
+    }
+    .mobile-nav-link:hover { background: rgba(255,255,255,0.05); color: var(--gold-light); }
+    .mobile-nav-link.active {
+      background: var(--gold-bright); color: var(--black); font-weight: 700;
+    }
+    .mobile-nav-link svg { width: 1rem; height: 1rem; color: var(--neutral-500); }
+    .mobile-nav-link.active svg { color: var(--black); }
+    .mobile-nav-cta {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      width: 100%; padding: 0.875rem 1.25rem; margin-top: 0.75rem;
+      border-radius: 0.75rem; font-weight: 700; font-size: 1rem;
+      background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+      color: var(--black); box-shadow: var(--shadow-lg);
+    }
+    .mobile-nav-cta svg { width: 1.25rem; height: 1.25rem; }
+
+    /* ========== PAGE ========== */
+    .page { display: none; }
+    .page.active { display: block; animation: fadeSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative; background: var(--black); color: white;
+      overflow: hidden; padding: 4rem 0;
+    }
+    @media (min-width: 640px) { .hero { padding: 5rem 0; } }
+    @media (min-width: 1024px) { .hero { padding: 6rem 0; } }
+    .hero-blob-1 {
+      position: absolute; top: -8rem; left: -8rem;
+      width: 24rem; height: 24rem; border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15); filter: blur(64px);
+      pointer-events: none;
+    }
+    .hero-blob-2 {
+      position: absolute; bottom: 0; right: 0;
+      width: 30rem; height: 30rem; border-radius: 50%;
+      background: rgba(250, 204, 21, 0.1); filter: blur(64px);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr; gap: 3rem;
+      align-items: center; position: relative; z-index: 10;
+    }
+    @media (min-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      padding: 0.375rem 0.875rem; border-radius: 9999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--gold-light); margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: var(--font-serif); font-size: 2.5rem; font-weight: 700;
+      line-height: 1.12; letter-spacing: -0.025em; color: white;
+      margin-bottom: 1.5rem;
+    }
+    @media (min-width: 640px) { .hero h1 { font-size: 3rem; } }
+    @media (min-width: 1024px) { .hero h1 { font-size: 3.4rem; } }
+    .hero h1 .gradient-text {
+      background: linear-gradient(90deg, #FACC15, #F2D06B, #D4AF37);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 1rem; line-height: 1.7; color: var(--neutral-300);
+      max-width: 36rem; margin-bottom: 1.5rem;
+    }
+    @media (min-width: 640px) { .hero-desc { font-size: 1.125rem; } }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+      max-width: 32rem; padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-stat-label {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--gold-light); font-weight: 600;
+    }
+    .hero-stat-desc {
+      font-size: 0.75rem; color: var(--neutral-400); margin-top: 0.125rem;
+    }
+
+    .hero-image-wrap { position: relative; max-width: 36rem; margin: 0 auto; }
+    .hero-image-offset {
+      position: absolute; inset: -0.75rem; border-radius: 1.5rem;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      transform: translate(0.5rem, 0.5rem); pointer-events: none;
+      display: none;
+    }
+    @media (min-width: 640px) { .hero-image-offset { display: block; } }
+    .hero-image-card {
+      position: relative; border-radius: 1rem; overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: var(--dark);
+    }
+    .hero-image-card img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      transition: transform 0.7s ease-out;
+    }
+    .hero-image-card:hover img { transform: scale(1.05); }
+    .hero-image-footer {
+      padding: 1rem 1.25rem;
+      background: linear-gradient(to top, var(--black), rgba(13,13,13,0.95), rgba(13,13,13,0.8));
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .hero-image-tag {
+      display: inline-block; padding: 0.125rem 0.625rem; border-radius: 0.25rem;
+      background: var(--gold-bright); color: var(--black);
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .hero-image-caption {
+      font-size: 0.75rem; color: var(--neutral-200); margin-top: 0.375rem;
+    }
+    @media (min-width: 640px) { .hero-image-caption { font-size: 0.875rem; } }
+    .lightbox-trigger {
+      padding: 0.625rem; border-radius: 0.5rem; flex-shrink: 0;
+      background: rgba(255,255,255,0.1); color: white;
+      transition: var(--transition);
+    }
+    .lightbox-trigger:hover { background: var(--gold-bright); color: var(--black); }
+    .lightbox-trigger svg { width: 1rem; height: 1rem; display: block; }
+
+    /* ========== IMAGE FALLBACK ========== */
+    .img-fallback {
+      width: 100%; min-height: 240px;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 1.5rem; text-align: center;
+      background: linear-gradient(135deg, var(--dark), #222);
+      color: white; border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .img-fallback svg { width: 3rem; height: 3rem; margin-bottom: 0.75rem; opacity: 0.8; }
+    .img-fallback .fallback-title {
+      font-family: var(--font-serif); font-size: 0.875rem;
+      color: var(--gold-light); letter-spacing: 0.025em;
+    }
+    .img-fallback .fallback-caption {
+      font-size: 0.75rem; color: var(--neutral-400);
+      margin-top: 0.25rem; max-width: 20rem;
+    }
+
+    /* ========== CARDS ========== */
+    .card {
+      background: white; border-radius: 1rem;
+      border: 1px solid rgba(229, 229, 229, 0.9);
+      transition: var(--transition); overflow: hidden;
+    }
+    .card:hover { border-color: var(--gold); box-shadow: var(--shadow-xl); }
+    .card-img { position: relative; height: 12rem; overflow: hidden; background: var(--dark); }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .card:hover .card-img img { transform: scale(1.05); }
+    .card-body { padding: 1.5rem; }
+    .card-title {
+      font-family: var(--font-serif); font-size: 1.25rem;
+      font-weight: 700; color: var(--black); margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    .card:hover .card-title { color: var(--gold-dark); }
+    .card-desc { font-size: 0.875rem; color: var(--neutral-600); line-height: 1.6; }
+    .card-link {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      margin-top: 1rem; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--black); transition: color 0.2s;
+    }
+    .card:hover .card-link { color: var(--gold-dark); }
+    .card-link svg { width: 1rem; height: 1rem; color: var(--gold); transition: transform 0.2s; }
+    .card:hover .card-link svg { transform: translateX(4px); }
+
+    .programme-number {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      width: 2.25rem; height: 2.25rem; border-radius: 0.5rem;
+      background: rgba(13,13,13,0.9); border: 1px solid rgba(212, 175, 55, 0.5);
+      color: var(--gold-bright); display: flex; align-items: center;
+      justify-content: center; font-family: var(--font-brand);
+      font-size: 0.75rem; font-weight: 700;
+    }
+
+    /* ========== ABOUT SECTION (HOME) ========== */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;
+    }
+    @media (min-width: 1024px) { .about-grid { grid-template-columns: 5fr 7fr; } }
+    .about-image-wrap { position: relative; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-xl); border: 1px solid var(--neutral-200); }
+    .about-image-wrap img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.5s; }
+    .about-image-wrap:hover img { transform: scale(1.05); }
+    .about-image-caption {
+      position: absolute; bottom: 0.75rem; left: 0.75rem; right: 0.75rem;
+      padding: 0.625rem 1rem; border-radius: 0.75rem;
+      background: rgba(13,13,13,0.9); backdrop-filter: blur(4px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: white; font-size: 0.75rem;
+    }
+    .about-image-caption strong { color: var(--gold-bright); }
+
+    .mission-vision-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 0.5rem;
+    }
+    @media (min-width: 640px) { .mission-vision-grid { grid-template-columns: 1fr 1fr; } }
+    .mv-card {
+      padding: 1rem; border-radius: 0.75rem;
+      background: var(--cream); border: 1px solid rgba(229,229,229,0.9);
+      display: flex; align-items: flex-start; gap: 0.875rem;
+    }
+    .mv-icon {
+      padding: 0.625rem; border-radius: 0.5rem; flex-shrink: 0;
+      background: var(--black); color: var(--gold-bright);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mv-icon svg { width: 1.25rem; height: 1.25rem; }
+    .mv-title { font-weight: 700; font-size: 0.875rem; color: var(--black); }
+    .mv-desc { font-size: 0.75rem; color: var(--neutral-600); margin-top: 0.25rem; line-height: 1.5; }
+
+    /* ========== STATS ========== */
+    .stats-section {
+      background: var(--black); color: white;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .stats-header {
+      display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+      .stats-header { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+    }
+    .stats-eyebrow {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.2em; color: var(--gold-light);
+    }
+    .stats-title {
+      font-family: var(--font-serif); font-size: 1.875rem;
+      font-weight: 700; margin-top: 0.5rem;
+    }
+    @media (min-width: 640px) { .stats-title { font-size: 2.25rem; } }
+    .stat-card {
+      padding: 1.5rem; border-radius: 1rem;
+      background: var(--dark); border: 1px solid rgba(212, 175, 55, 0.3);
+      transition: border-color 0.2s;
+    }
+    .stat-card:hover { border-color: var(--gold-bright); }
+    .stat-value {
+      font-family: var(--font-brand); font-size: 1.5rem;
+      font-weight: 700; color: var(--gold-bright);
+    }
+    @media (min-width: 640px) { .stat-value { font-size: 1.875rem; } }
+    .stat-label {
+      font-family: var(--font-serif); font-size: 1.125rem;
+      font-weight: 600; color: white; margin-top: 0.5rem;
+    }
+    .stat-note { font-size: 0.75rem; color: var(--neutral-400); margin-top: 0.5rem; }
+
+    /* ========== FEATURED ACTIVITIES ========== */
+    .activities-header {
+      display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) {
+      .activities-header { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+    }
+    .activity-card {
+      border-radius: 1rem; overflow: hidden;
+      background: var(--cream); border: 1px solid var(--neutral-200);
+      transition: var(--transition); display: flex; flex-direction: column;
+    }
+    .activity-card:hover { border-color: var(--gold); box-shadow: var(--shadow-lg); }
+    .activity-card-img { position: relative; height: 16rem; overflow: hidden; background: var(--dark); }
+    .activity-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .activity-card:hover .activity-card-img img { transform: scale(1.05); }
+    .activity-card-body { padding: 1.5rem; }
+    .activity-category {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--gold-dark);
+    }
+    .activity-title {
+      font-family: var(--font-serif); font-size: 1.25rem;
+      font-weight: 700; color: var(--black); margin-top: 0.25rem;
+    }
+    .activity-desc {
+      font-size: 0.875rem; color: var(--neutral-600);
+      margin-top: 0.5rem; line-height: 1.6;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonial-card {
+      padding: 1.75rem; border-radius: 1rem;
+      background: white; border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;
+    }
+    .testimonial-quote-mark {
+      font-family: var(--font-serif); font-size: 1.875rem;
+      color: var(--gold); line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 0.875rem; color: var(--neutral-700);
+      line-height: 1.7; font-style: italic;
+      margin-top: 1rem;
+    }
+    .testimonial-footer {
+      padding-top: 1rem; border-top: 1px solid var(--neutral-100);
+    }
+    .testimonial-name { font-weight: 700; font-size: 0.875rem; color: var(--black); }
+    .testimonial-role { font-size: 0.75rem; color: var(--gold-dark); font-weight: 500; margin-top: 0.125rem; }
+
+    /* ========== CTA BANNER ========== */
+    .cta-banner {
+      position: relative; border-radius: 1.5rem;
+      background: var(--black); color: white;
+      padding: 2rem; overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-xl);
+    }
+    @media (min-width: 640px) { .cta-banner { padding: 3rem; } }
+    @media (min-width: 1024px) { .cta-banner { padding: 4rem; } }
+    .cta-blob {
+      position: absolute; top: 0; right: 0;
+      width: 20rem; height: 20rem; border-radius: 50%;
+      background: rgba(250, 204, 21, 0.1); filter: blur(48px);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative; z-index: 10;
+      display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;
+    }
+    @media (min-width: 1024px) { .cta-inner { grid-template-columns: 2fr 1fr; } }
+    .cta-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.2em; color: var(--gold-bright);
+    }
+    .cta-eyebrow svg { width: 1rem; height: 1rem; }
+    .cta-title {
+      font-family: var(--font-serif); font-size: 1.875rem;
+      font-weight: 700; line-height: 1.2; margin-top: 0.5rem;
+    }
+    @media (min-width: 640px) { .cta-title { font-size: 2.25rem; } }
+    .cta-desc {
+      font-size: 1rem; color: var(--neutral-300);
+      line-height: 1.7; max-width: 42rem; margin-top: 1rem;
+    }
+    @media (min-width: 640px) { .cta-desc { font-size: 1.125rem; } }
+    .cta-actions { display: flex; flex-direction: column; gap: 0.875rem; }
+    .cta-btn {
+      width: 100%; padding: 1rem 1.5rem; border-radius: 0.75rem;
+      font-weight: 700; font-size: 0.9375rem; text-align: center;
+      transition: var(--transition);
+    }
+    .cta-btn-primary {
+      background: var(--gold-bright); color: var(--black);
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-btn-primary:hover { background: var(--gold-hover); }
+    .cta-btn-secondary {
+      background: rgba(255,255,255,0.1); color: white;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .cta-btn-secondary:hover { background: rgba(255,255,255,0.15); }
+
+    /* ========== PAGE HERO (INNER PAGES) ========== */
+    .page-hero {
+      background: var(--black); color: white;
+      padding: 4rem 0; border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    @media (min-width: 640px) { .page-hero { padding: 5rem 0; } }
+    .page-hero-inner { max-width: 48rem; }
+    .page-hero .eyebrow {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.2em; color: var(--gold-bright);
+    }
+    .page-hero h1 {
+      font-family: var(--font-serif); font-size: 2.5rem;
+      font-weight: 700; line-height: 1.12; margin-top: 1rem;
+    }
+    @media (min-width: 640px) { .page-hero h1 { font-size: 3rem; } }
+    .page-hero p {
+      font-size: 1.125rem; color: var(--neutral-300);
+      line-height: 1.7; margin-top: 1rem;
+    }
+
+    /* ========== ABOUT PAGE ========== */
+    .story-grid {
+      display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;
+    }
+    @media (min-width: 1024px) { .story-grid { grid-template-columns: 7fr 5fr; } }
+    .story-meta {
+      padding: 1.25rem; border-radius: 1rem;
+      background: var(--cream); border: 1px solid rgba(212, 175, 55, 0.3);
+      margin: 1.5rem 0;
+    }
+    .story-meta-row { display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.75rem; color: var(--neutral-600); margin-bottom: 0.75rem; }
+    .story-meta-row strong { color: var(--black); }
+    .story-meta p { font-size: 0.875rem; color: var(--neutral-700); line-height: 1.7; }
+
+    .crest-card {
+      border-radius: 1.5rem; background: var(--black);
+      padding: 2rem; border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-xl); color: white;
+    }
+    .crest-image {
+      border-radius: 1rem; overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      aspect-ratio: 1; max-height: 20rem; margin: 0 auto 1.25rem;
+      background: var(--black);
+    }
+    .crest-image img { width: 100%; height: 100%; object-fit: contain; }
+    .crest-title {
+      font-family: var(--font-brand); font-size: 1.125rem;
+      font-weight: 700; letter-spacing: 0.14em;
+      color: var(--gold-light); text-align: center;
+    }
+    .crest-desc {
+      font-size: 0.75rem; color: var(--neutral-300);
+      line-height: 1.6; text-align: center; margin-top: 0.5rem;
+    }
+
+    .mission-vision-cards {
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
+    }
+    @media (min-width: 768px) { .mission-vision-cards { grid-template-columns: 1fr 1fr; } }
+    .mv-large-card {
+      padding: 2rem; border-radius: 1.5rem;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    @media (min-width: 640px) { .mv-large-card { padding: 2.5rem; } }
+    .mv-large-card.dark {
+      background: var(--black); color: white;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-xl);
+    }
+    .mv-large-card.light {
+      background: white; color: var(--black);
+      border: 2px solid rgba(212, 175, 55, 0.5);
+      box-shadow: var(--shadow-xl);
+    }
+    .mv-large-icon {
+      width: 3rem; height: 3rem; border-radius: 1rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mv-large-card.dark .mv-large-icon { background: var(--gold-bright); color: var(--black); }
+    .mv-large-card.light .mv-large-icon { background: var(--black); color: var(--gold-bright); }
+    .mv-large-icon svg { width: 1.5rem; height: 1.5rem; }
+    .mv-large-card h2 {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;
+    }
+    @media (min-width: 640px) { .mv-large-card h2 { font-size: 1.875rem; } }
+    .mv-large-card.dark h2 { color: var(--gold-light); }
+    .mv-large-card.light h2 { color: var(--black); }
+    .mv-large-card p { font-size: 1rem; line-height: 1.7; }
+    @media (min-width: 640px) { .mv-large-card p { font-size: 1.125rem; } }
+    .mv-large-card.dark p { color: var(--neutral-200); }
+    .mv-large-card.light p { color: var(--neutral-700); }
+
+    .value-card {
+      padding: 1.5rem; border-radius: 1rem;
+      background: var(--cream); border: 1px solid var(--neutral-200);
+      transition: var(--transition);
+    }
+    .value-card:hover { border-color: var(--gold); }
+    .value-icon {
+      width: 2.75rem; height: 2.75rem; border-radius: 0.75rem;
+      background: var(--black); color: var(--gold-bright);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .value-icon svg { width: 1.25rem; height: 1.25rem; }
+    .value-card h3 {
+      font-family: var(--font-serif); font-size: 1.25rem;
+      font-weight: 700; color: var(--black);
+    }
+    .value-card p { font-size: 0.875rem; color: var(--neutral-600); margin-top: 0.5rem; line-height: 1.6; }
+
+    .team-banner {
+      border-radius: 1.5rem; overflow: hidden;
+      background: var(--black); border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-xl);
+      display: grid; grid-template-columns: 1fr; margin-bottom: 3.5rem;
+    }
+    @media (min-width: 1024px) { .team-banner { grid-template-columns: 7fr 5fr; } }
+    .team-banner-img { aspect-ratio: 16/11; overflow: hidden; }
+    .team-banner-img img { width: 100%; height: 100%; object-fit: cover; }
+    .team-banner-content {
+      padding: 2rem; display: flex; flex-direction: column;
+      justify-content: center; color: white;
+    }
+    @media (min-width: 640px) { .team-banner-content { padding: 2.5rem; } }
+    .team-banner-content .eyebrow {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.2em; color: var(--gold-bright);
+    }
+    .team-banner-content h3 {
+      font-family: var(--font-serif); font-size: 1.5rem;
+      font-weight: 700; margin-top: 0.5rem;
+    }
+    @media (min-width: 640px) { .team-banner-content h3 { font-size: 1.875rem; } }
+    .team-banner-content p {
+      font-size: 0.875rem; color: var(--neutral-300);
+      line-height: 1.7; margin-top: 1rem;
+    }
+    @media (min-width: 640px) { .team-banner-content p { font-size: 1rem; } }
+
+    .leader-card {
+      padding: 1.5rem; border-radius: 1rem;
+      background: white; border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-sm);
+    }
+    .leader-avatar {
+      width: 3rem; height: 3rem; border-radius: 50%;
+      background: var(--black); border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .leader-avatar svg { width: 1.75rem; height: 1.75rem; }
+    .leader-name {
+      font-family: var(--font-serif); font-size: 1.125rem;
+      font-weight: 700; color: var(--black);
+    }
+    .leader-role {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--gold-dark); margin-top: 0.25rem;
+    }
+    .leader-bio { font-size: 0.875rem; color: var(--neutral-600); line-height: 1.7; margin-top: 0.75rem; }
+
+    /* ========== PROGRAMMES PAGE ========== */
+    .programme-article {
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+      align-items: start; margin-bottom: 6rem;
+    }
+    @media (min-width: 1024px) { .programme-article { grid-template-columns: 5fr 7fr; gap: 3rem; } }
+    .programme-article:nth-child(even) .prog-image { order: 2; }
+    .programme-article:nth-child(even) .prog-content { order: 1; }
+    @media (max-width: 1023px) {
+      .programme-article:nth-child(even) .prog-image { order: 0; }
+      .programme-article:nth-child(even) .prog-content { order: 0; }
+    }
+    .prog-image-card {
+      border-radius: 1rem; overflow: hidden;
+      border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-lg); background: var(--dark);
+    }
+    .prog-image-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .prog-image-caption {
+      padding: 1rem; background: var(--black);
+      color: var(--neutral-300); font-size: 0.75rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .prog-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .prog-number {
+      padding: 0.25rem 0.75rem; border-radius: 0.5rem;
+      background: var(--black); color: var(--gold-bright);
+      font-family: var(--font-brand); font-size: 0.875rem; font-weight: 700;
+    }
+    .prog-icon {
+      padding: 0.5rem; border-radius: 0.5rem;
+      background: rgba(250, 204, 21, 0.2); color: var(--black);
+    }
+    .prog-icon svg { width: 1.25rem; height: 1.25rem; display: block; }
+    .prog-title {
+      font-family: var(--font-serif); font-size: 1.875rem;
+      font-weight: 700; color: var(--black);
+    }
+    .prog-subtitle { font-size: 0.875rem; font-weight: 600; color: var(--gold-dark); margin-top: 0.25rem; }
+    .prog-desc { font-size: 1rem; color: var(--neutral-700); line-height: 1.7; margin: 1rem 0; }
+    .prog-lists {
+      display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 1.5rem 0;
+    }
+    @media (min-width: 768px) { .prog-lists { grid-template-columns: 1fr 1fr; } }
+    .prog-list-card {
+      padding: 1.25rem; border-radius: 1rem;
+      background: var(--cream); border: 1px solid var(--neutral-200);
+    }
+    .prog-list-title {
+      font-size: 0.875rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--black); margin-bottom: 0.75rem;
+    }
+    .prog-list { list-style: none; }
+    .prog-list li {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.875rem; color: var(--neutral-600);
+      margin-bottom: 0.625rem; line-height: 1.5;
+    }
+    .prog-list li:last-child { margin-bottom: 0; }
+    .prog-list .check { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .prog-list .check svg { width: 1rem; height: 1rem; }
+    .prog-list .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--black); flex-shrink: 0; margin-top: 8px;
+    }
+    .prog-outcome {
+      padding: 1rem; border-radius: 0.75rem;
+      background: var(--black); color: white;
+      border-left: 4px solid var(--gold-bright);
+      margin-top: 1rem;
+    }
+    .prog-outcome-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--gold-light);
+    }
+    .prog-outcome p { font-size: 0.875rem; color: var(--neutral-200); margin-top: 0.25rem; }
+
+    /* ========== IMPACT PAGE ========== */
+    .impact-header {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 1rem; margin-bottom: 2.5rem;
+    }
+    .impact-title { font-family: var(--font-serif); font-size: 1.875rem; font-weight: 700; color: var(--black); }
+    .impact-subtitle { font-size: 0.875rem; color: var(--neutral-600); margin-top: 0.25rem; }
+    .impact-stat-card {
+      padding: 1.5rem; border-radius: 1rem;
+      background: var(--black); color: white;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: var(--shadow-md);
+    }
+    .timeline-card {
+      background: white; padding: 2rem; border-radius: 1.5rem;
+      border: 1px solid var(--neutral-200); box-shadow: var(--shadow-sm);
+    }
+    .timeline-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .timeline-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--black); }
+    .timeline {
+      list-style: none; border-left: 2px solid var(--gold);
+      padding-left: 1.5rem; margin-left: 0.5rem;
+    }
+    .timeline-item { position: relative; margin-bottom: 1.5rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -31px; top: 6px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gold-bright); border: 2px solid var(--black);
+    }
+    .timeline-period {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--gold-dark);
+    }
+    .timeline-item h4 { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 700; color: var(--black); margin-top: 0.25rem; }
+    .timeline-item p { font-size: 0.875rem; color: var(--neutral-600); line-height: 1.6; margin-top: 0.25rem; }
+
+    .story-card {
+      padding: 1.25rem; border-radius: 1rem;
+      background: var(--cream); border: 1px solid var(--neutral-200);
+      margin-bottom: 1.25rem;
+    }
+    .story-card:last-child { margin-bottom: 0; }
+    .story-tag {
+      display: inline-block; padding: 0.125rem 0.625rem; border-radius: 0.25rem;
+      background: rgba(250, 204, 21, 0.25); color: var(--black);
+      font-size: 0.75rem; font-weight: 700;
+    }
+    .story-card h4 { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 700; color: var(--black); margin-top: 0.5rem; }
+    .story-card p { font-size: 0.875rem; color: var(--neutral-600); line-height: 1.7; margin-top: 0.5rem; }
+
+    .filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .filter-btn {
+      padding: 0.5rem 1rem; border-radius: 9999px;
+      font-size: 0.75rem; font-weight: 600;
+      background: var(--cream); color: var(--neutral-700);
+      border: 1px solid var(--neutral-200);
+      transition: var(--transition);
+    }
+    .filter-btn:hover { background: rgba(229,229,229,0.7); }
+    .filter-btn.active { background: var(--black); color: var(--gold-bright); box-shadow: var(--shadow-md); }
+    @media (min-width: 640px) { .filter-btn { font-size: 0.875rem; } }
+
+    .gallery-card {
+      position: relative; border-radius: 1rem; overflow: hidden;
+      background: var(--dark); border: 1px solid var(--neutral-200);
+      transition: var(--transition); cursor: pointer;
+    }
+    .gallery-card:hover { border-color: var(--gold); box-shadow: var(--shadow-xl); }
+    .gallery-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.5s; }
+    .gallery-card:hover img { transform: scale(1.05); }
+    .gallery-card-body { padding: 1.25rem; background: white; }
+    .gallery-category {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--gold-dark);
+    }
+    .gallery-title { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 700; color: var(--black); margin-top: 0.125rem; }
+    .gallery-caption {
+      font-size: 0.75rem; color: var(--neutral-600);
+      margin-top: 0.375rem; line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+
+    /* ========== GET INVOLVED ========== */
+    .involved-card {
+      border-radius: 1.5rem; padding: 2rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+      gap: 1.5rem; min-height: 100%;
+    }
+    .involved-card.light {
+      background: var(--cream); border: 1px solid var(--neutral-200);
+    }
+    .involved-card.dark {
+      background: var(--black); color: white;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      box-shadow: var(--shadow-xl);
+    }
+    .involved-icon {
+      width: 3rem; height: 3rem; border-radius: 1rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .involved-card.light .involved-icon { background: var(--gold-bright); color: var(--black); }
+    .involved-card.dark .involved-icon { background: var(--gold-bright); color: var(--black); }
+    .involved-icon svg { width: 1.5rem; height: 1.5rem; }
+    .involved-card h2 {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;
+      margin-top: 1rem;
+    }
+    .involved-card.light h2 { color: var(--black); }
+    .involved-card.dark h2 { color: var(--gold-light); }
+    .involved-card p { font-size: 0.875rem; line-height: 1.7; margin-top: 0.75rem; }
+    .involved-card.light p { color: var(--neutral-600); }
+    .involved-card.dark p { color: var(--neutral-300); }
+    .involved-list { list-style: none; margin-top: 0.75rem; }
+    .involved-list li {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.875rem; margin-bottom: 0.625rem;
+    }
+    .involved-list li:last-child { margin-bottom: 0; }
+    .involved-card.light .involved-list li { color: var(--neutral-700); }
+    .involved-card.dark .involved-list li { color: var(--neutral-200); }
+    .involved-list .check { flex-shrink: 0; margin-top: 2px; }
+    .involved-list .check svg { width: 1rem; height: 1rem; color: var(--gold); }
+    .involved-card.dark .involved-list .check svg { color: var(--gold-bright); }
+    .involved-btn {
+      width: 100%; padding: 0.875rem 1.25rem; border-radius: 0.75rem;
+      font-weight: 700; font-size: 0.875rem; text-align: center;
+      transition: var(--transition);
+    }
+    .involved-card.light .involved-btn { background: var(--black); color: var(--gold-bright); }
+    .involved-card.light .involved-btn:hover { background: #1f1f1f; }
+    .involved-card.dark .involved-btn { background: var(--gold-bright); color: var(--black); }
+    .involved-card.dark .involved-btn:hover { background: var(--gold-hover); }
+    .donation-channel {
+      padding: 0.875rem; border-radius: 0.75rem;
+      background: white; border: 1px solid var(--neutral-200);
+      margin-bottom: 0.75rem;
+    }
+    .donation-channel:last-child { margin-bottom: 0; }
+    .donation-method { font-size: 0.75rem; font-weight: 700; color: var(--black); }
+    .donation-details { font-size: 0.75rem; color: var(--neutral-600); line-height: 1.5; margin-top: 0.125rem; }
+
+    /* ========== NEWS PAGE ========== */
+    .news-filters {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 1rem; margin-bottom: 2.5rem;
+    }
+    .news-filter-group { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .news-filter-btn {
+      padding: 0.5rem 1rem; border-radius: 9999px;
+      font-size: 0.75rem; font-weight: 600;
+      background: white; color: var(--neutral-700);
+      border: 1px solid var(--neutral-200);
+      transition: var(--transition);
+    }
+    .news-filter-btn:hover { background: var(--neutral-100); }
+    .news-filter-btn.active { background: var(--black); color: var(--gold-bright); }
+    @media (min-width: 640px) { .news-filter-btn { font-size: 0.875rem; } }
+
+    .news-card {
+      background: white; border-radius: 1rem; overflow: hidden;
+      border: 1px solid var(--neutral-200);
+      transition: var(--transition); display: flex; flex-direction: column;
+    }
+    .news-card:hover { border-color: var(--gold); box-shadow: var(--shadow-xl); }
+    .news-card-img { position: relative; height: 13rem; overflow: hidden; background: var(--dark); }
+    .news-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .news-type-badge {
+      position: absolute; top: 0.75rem; left: 0.75rem;
+      padding: 0.25rem 0.75rem; border-radius: 9999px;
+      background: rgba(13,13,13,0.9); color: var(--gold-bright);
+      font-size: 0.75rem; font-weight: 700;
+    }
+    .news-card-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
+    .news-date {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; color: var(--neutral-500);
+    }
+    .news-date svg { width: 0.875rem; height: 0.875rem; color: var(--gold); }
+    .news-card h2 {
+      font-family: var(--font-serif); font-size: 1.25rem;
+      font-weight: 700; color: var(--black);
+    }
+    .news-summary { font-size: 0.875rem; color: var(--neutral-600); line-height: 1.7; }
+    .news-read-more {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--black);
+      transition: color 0.2s; margin-top: auto; padding-top: 0.5rem;
+    }
+    .news-read-more:hover { color: var(--gold-dark); }
+    .news-read-more svg { width: 0.875rem; height: 0.875rem; color: var(--gold); }
+
+    /* ========== CONTACT PAGE ========== */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+    }
+    @media (min-width: 1024px) { .contact-grid { grid-template-columns: 5fr 7fr; } }
+    .contact-info-card {
+      padding: 2rem; border-radius: 1.5rem;
+      background: var(--black); color: white;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: var(--shadow-xl);
+    }
+    .contact-info-card h2 {
+      font-family: var(--font-serif); font-size: 1.5rem;
+      font-weight: 700; color: var(--gold-light); margin-bottom: 1.5rem;
+    }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 0.875rem;
+      margin-bottom: 1.25rem;
+    }
+    .contact-detail:last-child { margin-bottom: 0; }
+    .contact-detail-icon {
+      padding: 0.625rem; border-radius: 0.75rem;
+      background: rgba(255,255,255,0.05); color: var(--gold-bright);
+      flex-shrink: 0;
+    }
+    .contact-detail-icon svg { width: 1.25rem; height: 1.25rem; display: block; }
+    .contact-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--neutral-400); }
+    .contact-value { font-size: 0.875rem; font-weight: 500; color: var(--neutral-100); margin-top: 0.125rem; word-break: break-all; }
+    .contact-socials {
+      padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 1.5rem;
+    }
+    .contact-socials-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--gold-light); margin-bottom: 0.75rem;
+    }
+    .contact-socials-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem;
+    }
+    .social-item {
+      padding: 0.625rem; border-radius: 0.75rem;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.75rem;
+    }
+    .social-item-name { font-weight: 700; color: white; }
+    .social-item-handle { color: var(--neutral-400); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .map-card {
+      padding: 1.5rem; border-radius: 1.5rem;
+      background: white; border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-sm); margin-top: 1.5rem;
+    }
+    .map-card-title {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.875rem; font-weight: 700; color: var(--black);
+      margin-bottom: 0.75rem;
+    }
+    .map-card-title svg { width: 1rem; height: 1rem; color: var(--gold); }
+    .map-placeholder {
+      height: 11rem; border-radius: 1rem;
+      background: var(--cream); border: 1px dashed rgba(212, 175, 55, 0.6);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 1rem; text-align: center;
+    }
+    .map-placeholder svg { width: 1.75rem; height: 1.75rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .map-placeholder strong { font-size: 0.75rem; color: var(--black); }
+    .map-placeholder span { font-size: 11px; color: var(--neutral-500); margin-top: 0.25rem; }
+
+    .contact-form-card {
+      padding: 2rem; border-radius: 1.5rem;
+      background: white; border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-lg);
+    }
+    @media (min-width: 640px) { .contact-form-card { padding: 2.5rem; } }
+    .contact-form-card h2 {
+      font-family: var(--font-serif); font-size: 1.875rem;
+      font-weight: 700; color: var(--black);
+    }
+    @media (min-width: 640px) { .contact-form-card h2 { font-size: 2.25rem; } }
+    .contact-form-desc { font-size: 0.875rem; color: var(--neutral-600); margin-top: 0.5rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+    @media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+    .form-group label {
+      display: block; font-size: 0.875rem; font-weight: 600;
+      color: var(--black); margin-bottom: 0.375rem;
+    }
+    .form-group .required { color: var(--red); }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border-radius: 0.75rem; border: 1px solid var(--neutral-300);
+      font-size: 0.875rem; font-family: inherit;
+      background: var(--cream); transition: var(--transition);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none; border-color: var(--gold);
+      background: white; box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+    }
+    .form-input.error, .form-select.error, .form-textarea.error {
+      border-color: var(--red); box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-error-msg { font-size: 0.75rem; color: var(--red); margin-top: 0.375rem; }
+    .form-full { grid-column: 1 / -1; }
+    .form-submit {
+      width: 100%; padding: 0.875rem 1.5rem; border-radius: 0.75rem;
+      background: var(--black); color: var(--gold-bright);
+      font-weight: 700; font-size: 0.9375rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      transition: var(--transition); margin-top: 1.5rem;
+    }
+    .form-submit:hover { background: #1f1f1f; }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-submit svg { width: 1rem; height: 1rem; }
+
+    .alert {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 1rem; border-radius: 1rem; margin-top: 1.5rem;
+      font-size: 0.875rem;
+    }
+    .alert svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; margin-top: 0.125rem; }
+    .alert-success { background: #ecfdf5; border: 1px solid #a7f3d0; color: #064e3b; }
+    .alert-success svg { color: var(--emerald); }
+    .alert-success strong { font-weight: 700; }
+    .alert-error { background: #fef2f2; border: 1px solid #fecaca; color: #7f1d1d; }
+    .alert-error svg { color: var(--red); }
+
+    /* ========== FOOTER ========== */
+    .site-footer {
+      background: var(--black); color: var(--neutral-300);
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      margin-top: auto;
+    }
+    .footer-main { padding: 3.5rem 0; }
+    @media (min-width: 1024px) { .footer-main { padding: 4rem 0; } }
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+    }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .footer-grid { grid-template-columns: 4fr 2fr 3fr 3fr; gap: 2rem; } }
+
+    .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .footer-brand-name {
+      display: block; font-family: var(--font-brand);
+      font-size: 1.125rem; font-weight: 700;
+      letter-spacing: 0.14em; color: var(--gold-light);
+    }
+    .footer-brand-sub {
+      display: block; font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.2em; color: var(--neutral-400);
+    }
+    .footer-desc { font-size: 0.875rem; color: var(--neutral-400); line-height: 1.7; }
+    .footer-socials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+    .footer-social-link {
+      padding: 0.375rem 0.75rem; border-radius: 0.5rem;
+      background: rgba(255,255,255,0.05); color: var(--neutral-300);
+      font-size: 0.75rem; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: var(--transition);
+    }
+    .footer-social-link:hover { background: var(--gold-bright); color: var(--black); }
+
+    .footer-heading {
+      font-family: var(--font-serif); font-size: 1rem;
+      font-weight: 700; color: white; letter-spacing: 0.025em;
+      margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.625rem; }
+    .footer-links li:last-child { margin-bottom: 0; }
+    .footer-links button {
+      font-size: 0.875rem; color: var(--neutral-400);
+      transition: color 0.2s; text-align: left;
+    }
+    .footer-links button:hover { color: var(--gold-bright); }
+    .footer-contact { list-style: none; }
+    .footer-contact li {
+      display: flex; align-items: flex-start; gap: 0.625rem;
+      font-size: 0.875rem; color: var(--neutral-400);
+      margin-bottom: 0.75rem;
+    }
+    .footer-contact li:last-child { margin-bottom: 0; }
+    .footer-contact svg { width: 1rem; height: 1rem; color: var(--gold); flex-shrink: 0; margin-top: 3px; }
+    .footer-contact .break { word-break: break-all; }
+    .footer-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--gold-bright); margin-top: 0.75rem;
+      transition: opacity 0.2s;
+    }
+    .footer-cta:hover { text-decoration: underline; }
+    .footer-cta svg { width: 0.875rem; height: 0.875rem; }
+
+    .footer-bottom {
+      margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid rgba(38,38,38,0.9);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: space-between; gap: 1rem;
+      font-size: 0.75rem; color: var(--neutral-500);
+    }
+    @media (min-width: 640px) { .footer-bottom { flex-direction: row; } }
+    .footer-bottom .reg-info { color: var(--neutral-500); }
+    .footer-bottom .reg-info span { color: var(--neutral-400); }
+
+    /* ========== MODALS ========== */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 70;
+      background: rgba(0,0,0,0.9); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem; opacity: 0; visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal-content {
+      position: relative; width: 100%; max-width: 56rem;
+      background: var(--dark); border-radius: 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      overflow: hidden; box-shadow: var(--shadow-xl);
+      max-height: 90vh; display: flex; flex-direction: column;
+      transform: scale(0.95); transition: transform 0.3s;
+    }
+    .modal-overlay.open .modal-content { transform: scale(1); }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem; z-index: 10;
+      padding: 0.5rem; border-radius: 50%;
+      background: rgba(0,0,0,0.7); color: white;
+      transition: var(--transition);
+    }
+    .modal-close:hover { background: var(--gold-bright); color: var(--black); }
+    .modal-close svg { width: 1.25rem; height: 1.25rem; display: block; }
+    .modal-image {
+      max-height: 72vh; overflow: hidden; background: black;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-image img { max-height: 72vh; width: auto; object-fit: contain; }
+    .modal-image-full { max-height: 72vh; width: 100%; object-fit: contain; }
+    .modal-body {
+      padding: 1.5rem; background: var(--dark); color: white;
+      overflow-y: auto;
+    }
+    .modal-category {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--gold-bright);
+    }
+    .modal-title {
+      font-family: var(--font-serif); font-size: 1.25rem;
+      font-weight: 700; margin-top: 0.25rem; color: white;
+    }
+    .modal-caption { font-size: 0.875rem; color: var(--neutral-300); margin-top: 0.5rem; line-height: 1.7; }
+
+    .modal-light {
+      background: white; border-radius: 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .modal-light .modal-body { background: white; color: var(--black); }
+    .modal-light .modal-title { color: var(--black); }
+    .modal-light .modal-caption { color: var(--neutral-700); }
+    .modal-light .modal-category { color: var(--gold-dark); }
+    .modal-news-image { position: relative; height: 16rem; overflow: hidden; background: var(--dark); }
+    .modal-news-image img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-news-body { padding: 1.5rem 2rem; overflow-y: auto; }
+    @media (min-width: 640px) { .modal-news-body { padding: 2rem; } }
+    .news-modal-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem;
+      font-size: 0.75rem; font-weight: 600; color: var(--gold-dark);
+    }
+    .news-modal-type {
+      padding: 0.25rem 0.625rem; border-radius: 9999px;
+      background: rgba(250, 204, 21, 0.25); color: var(--black);
+    }
+    .modal-news-body h3 {
+      font-family: var(--font-serif); font-size: 1.5rem;
+      font-weight: 700; color: var(--black); margin-top: 1rem;
+    }
+    .modal-news-body .news-full-summary {
+      font-size: 1rem; color: var(--neutral-700);
+      line-height: 1.7; margin-top: 0.75rem;
+    }
+    .news-full-content {
+      padding: 1rem; border-radius: 0.75rem;
+      background: var(--cream); border: 1px solid var(--neutral-200);
+      font-size: 0.875rem; color: var(--neutral-600);
+      line-height: 1.7; margin-top: 1rem;
+    }
+    .modal-footer { display: flex; justify-content: flex-end; padding-top: 1rem; }
+    .modal-footer .btn { padding: 0.625rem 1.25rem; font-size: 0.875rem; }
+
+    /* ========== VOLUNTEER MODAL ========== */
+    .volunteer-modal {
+      position: fixed; inset: 0; z-index: 70;
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem; opacity: 0; visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    .volunteer-modal.open { opacity: 1; visibility: visible; }
+    .volunteer-modal-content {
+      width: 100%; max-width: 28rem;
+      background: white; border-radius: 1.5rem;
+      padding: 2rem; box-shadow: var(--shadow-xl);
+      transform: scale(0.95); transition: transform 0.3s;
+    }
+    .volunteer-modal.open .volunteer-modal-content { transform: scale(1); }
+    .volunteer-modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .volunteer-modal-header h3 {
+      font-family: var(--font-serif); font-size: 1.5rem;
+      font-weight: 700; color: var(--black);
+    }
+    .volunteer-modal-close {
+      padding: 0.5rem; border-radius: 50%;
+      background: var(--neutral-100); color: var(--neutral-600);
+      transition: var(--transition);
+    }
+    .volunteer-modal-close:hover { background: var(--neutral-200); }
+    .volunteer-modal-close svg { width: 1.25rem; height: 1.25rem; display: block; }
+    .volunteer-modal p { font-size: 0.875rem; color: var(--neutral-600); line-height: 1.7; margin-bottom: 1rem; }
+    .volunteer-info-list { list-style: none; margin-bottom: 1.5rem; }
+    .volunteer-info-list li {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.875rem; color: var(--neutral-700);
+      margin-bottom: 0.5rem;
+    }
+    .volunteer-info-list li:last-child { margin-bottom: 0; }
+    .volunteer-info-list svg { width: 1rem; height: 1rem; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+    /* ========== SCROLL TO TOP / ANIMATIONS ========== */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== RESPONSIVE FIXES ========== */
+    @media (max-width: 639px) {
+      .hero h1 { font-size: 1.875rem; }
+      .page-hero h1 { font-size: 2rem; }
+      .section-header h2 { font-size: 1.5rem; }
+      .prog-title { font-size: 1.5rem; }
+      .cta-title { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span class="top-bar-dot"></span>
+        <span><strong>AZAZI FOUNDATION</strong> — Grassroots Youth Mentorship & Community Welfare</span>
+      </div>
+      <div class="top-bar-right">
+        <button data-nav="get-involved">Volunteer With Us</button>
+        <span class="top-bar-sep">|</span>
+        <button data-nav="contact">Partner Inquiries</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <button class="logo-btn" data-nav="home" aria-label="Azazi Foundation Home">
+        <div class="logo-crest" id="logo-crest-header"></div>
+        <div>
+          <span class="logo-text-main">AZAZI FOUNDATION</span>
+          <span class="logo-text-sub">Uplifting Communities</span>
+        </div>
+      </button>
+
+      <nav class="main-nav" aria-label="Primary Navigation" id="desktop-nav"></nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary header-cta" data-nav="get-involved">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 12H3"/><path d="m5 6-3 3 3 3"/><path d="M21 12h-8"/><path d="m19 18 3-3-3-3"/></svg>
+          <span>Support Our Work</span>
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false">
+          <svg id="mobile-toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobile-nav">
+      <div id="mobile-nav-items"></div>
+      <button class="mobile-nav-cta" data-nav="get-involved">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        <span>Partner or Volunteer Today</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <!-- HOME PAGE -->
+    <div class="page active" id="page-home"></div>
+    <!-- ABOUT PAGE -->
+    <div class="page" id="page-about"></div>
+    <!-- PROGRAMMES PAGE -->
+    <div class="page" id="page-programmes"></div>
+    <!-- IMPACT PAGE -->
+    <div class="page" id="page-impact"></div>
+    <!-- GET INVOLVED PAGE -->
+    <div class="page" id="page-get-involved"></div>
+    <!-- NEWS PAGE -->
+    <div class="page" id="page-news"></div>
+    <!-- CONTACT PAGE -->
+    <div class="page" id="page-contact"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <div id="logo-crest-footer"></div>
+            <div>
+              <span class="footer-brand-name">AZAZI FOUNDATION</span>
+              <span class="footer-brand-sub">Empowering Communities</span>
+            </div>
+          </div>
+          <p class="footer-desc">Dedicated to walking alongside youth, children, and vulnerable communities through mentorship, welfare advocacy, and dignified grassroots action.</p>
+          <div class="footer-socials" id="footer-socials"></div>
+        </div>
+        <div>
+          <h3 class="footer-heading">Explore</h3>
+          <ul class="footer-links" id="footer-explore"></ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Our Focus Areas</h3>
+          <ul class="footer-links" id="footer-programmes"></ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Contact & Outreach</h3>
+          <ul class="footer-contact" id="footer-contact"></ul>
+          <button class="footer-cta" data-nav="contact">
+            <span>Send Us a Message</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> Azazi Foundation. All rights reserved.</p>
+        <p class="reg-info">Reg. Info: <span id="footer-reg"></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="modal-overlay" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo preview">
+    <div class="modal-content" id="lightbox-content">
+      <button class="modal-close" id="lightbox-close" aria-label="Close photo preview">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div class="modal-image" id="lightbox-image-wrap"></div>
+      <div class="modal-body" id="lightbox-body"></div>
+    </div>
+  </div>
+
+  <!-- NEWS MODAL -->
+  <div class="modal-overlay" id="news-modal" role="dialog" aria-modal="true" aria-label="News article">
+    <div class="modal-content modal-light" id="news-modal-content">
+      <button class="modal-close" id="news-modal-close" aria-label="Close article" style="background:rgba(13,13,13,0.8);">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div id="news-modal-inner"></div>
+    </div>
+  </div>
+
+  <!-- VOLUNTEER MODAL -->
+  <div class="volunteer-modal" id="volunteer-modal" role="dialog" aria-modal="true" aria-label="Volunteer with us">
+    <div class="volunteer-modal-content">
+      <div class="volunteer-modal-header">
+        <h3>Volunteer With Us</h3>
+        <button class="volunteer-modal-close" id="volunteer-modal-close" aria-label="Close volunteer dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <p>We welcome compassionate mentors, youth facilitators, and event organizers to join our field team during school visits, community assemblies, and welfare drives.</p>
+      <ul class="volunteer-info-list">
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Youth mentorship & peer dialogue facilitation</span></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Community outreach logistics & coordination</span></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Documentation, photography & media support</span></li>
+      </ul>
+      <button class="btn btn-primary" style="width:100%;padding:0.875rem;" data-nav="contact">Express Interest to Volunteer</button>
+    </div>
+  </div>
+
+  <script>
+    // ========== SITE CONFIG ==========
+    const SITE_CONFIG = {
+      organizationName: "Azazi Foundation",
+      tagline: "Empowering Communities, Uplifting Futures",
+      brandIdentityNote: "Rooted in dignity, unity, and grassroots action—symbolized by our soaring gold crest and signature sunburst yellow field presence.",
+      contact: {
+        email: "[Editable Placeholder: official-email@azazifoundation.org]",
+        phone: "[Editable Placeholder: +254 XXX XXX XXX]",
+        address: "[Editable Placeholder: Official Office Street / Town / County]",
+        workingHours: "[Editable Placeholder: Monday – Friday, 8:00 AM – 5:00 PM]",
+        mapCoordinatesLabel: "[Editable Placeholder: Verified GPS Coordinates / Google Maps Embed]",
+        socials: [
+          { name: "Facebook", handle: "[Editable: @AzaziFoundation]" },
+          { name: "Instagram", handle: "[Editable: @azazifoundation]" },
+          { name: "X (Twitter)", handle: "[Editable: @AzaziFoundation]" },
+          { name: "LinkedIn", handle: "[Editable: Azazi Foundation]" }
+        ]
+      },
+      about: {
+        foundingYear: "[Editable Placeholder: Founding Year]",
+        registrationStatus: "[Editable Placeholder: Official NGO / CBO Registration Number]",
+        historyNarrative: "[Editable Placeholder: Insert verified founding story of Azazi Foundation—detailing how the organization began, the community needs that inspired its creation, and its journey of grassroots service.]",
+        mission: "To empower vulnerable youth, children, and underserved communities through mentorship, welfare advocacy, and sustainable grassroots initiatives that nurture dignity and self-reliance.",
+        vision: "A thriving, equitable society where every young person and community member has the guidance, safe environment, and opportunities needed to soar to their fullest potential."
+      },
+      impactStats: [
+        { id: "stat-1", value: "[Verified Figure]", label: "Youth & Children Reached", note: "Editable metric — update with verified outreach count" },
+        { id: "stat-2", value: "[Verified Figure]", label: "Community Visits & Sessions", note: "Editable metric — update with audited field activities" },
+        { id: "stat-3", value: "[Verified Figure]", label: "Partner Schools & Centres", note: "Editable metric — update with active partner institutions" },
+        { id: "stat-4", value: "[Verified Figure]", label: "Dedicated Volunteers", note: "Editable metric — update with active team members" }
+      ],
+      leadership: [
+        { id: "leader-1", name: "[Editable Placeholder: Founder / Executive Director Name]", role: "Founder & Executive Director", bio: "[Editable Placeholder: Brief verified biography highlighting leadership background and commitment to community transformation.]" },
+        { id: "leader-2", name: "[Editable Placeholder: Programmes Coordinator Name]", role: "Head of Programmes & Outreach", bio: "[Editable Placeholder: Brief verified biography detailing field coordination, youth mentorship, and community partnerships.]" },
+        { id: "leader-3", name: "[Editable Placeholder: Welfare & Partnerships Lead Name]", role: "Community Welfare & Partnerships Lead", bio: "[Editable Placeholder: Brief verified biography covering institutional assessments, volunteer mobilization, and stakeholder engagement.]" }
+      ],
+      donationChannels: [
+        { method: "Official Bank Transfer", details: "[Editable Placeholder: Bank Name, Account Name: Azazi Foundation, Account Number & Branch Code]" },
+        { method: "Mobile Money / Paybill", details: "[Editable Placeholder: Official Paybill / Till Number & Account Reference]" },
+        { method: "In-Kind & Material Support", details: "Educational supplies, bedding, hygiene kits, and mentorship resources coordinated via our outreach team." }
+      ]
+    };
+
+    // ========== PHOTOS ==========
+    const PHOTOS = {
+      mentorshipHero: {
+        src: "WhatsApp Image 2026-11-22 at 22.52.04 (1).jpeg",
+        title: "One-on-One Youth Mentorship Session",
+        category: "Mentorship",
+        caption: "An Azazi Foundation facilitator in signature sunburst yellow polo engaging attentively with students during an interactive mentorship dialogue.",
+        alt: "Azazi Foundation facilitator wearing a yellow polo shirt speaking attentively with young students seated outdoors"
+      },
+      communityOutreach: {
+        src: "WhatsApp Image 2026-11-22 at 22.52.03 (1).jpeg",
+        title: "Outdoor Youth & Children Outreach Gathering",
+        category: "Community Outreach",
+        caption: "Azazi Foundation team members leading an energetic outdoor community gathering and encouragement session with children.",
+        alt: "Azazi Foundation facilitators in yellow polo shirts engaging with a group of children seated outdoors under trees"
+      },
+      teamPortrait: {
+        src: "WhatsApp Image 2026-11-22 at 22.52.02.jpeg",
+        title: "The Azazi Foundation Outreach Team",
+        category: "Our Team",
+        caption: "Azazi Foundation members standing united in branded yellow and black-collared uniforms during a field mission.",
+        alt: "Group portrait of the Azazi Foundation team standing together in branded yellow polo shirts with black collars"
+      },
+      facilityAssessment: {
+        src: "WhatsApp Image 2026-11-22 at 22.52.00.jpeg",
+        title: "Residential & Welfare Facility Assessment",
+        category: "Welfare Support",
+        caption: "Azazi Foundation volunteers inspecting residential dormitory conditions to identify practical welfare and living-standard improvements.",
+        alt: "Azazi Foundation team members in yellow polo shirts assessing indoor residential bunk facilities"
+      },
+      peerDialogue: {
+        src: "WhatsApp Image 2026-11-22 at 22.52.04.jpeg",
+        title: "Small-Group Peer Counselling & Listening Circle",
+        category: "Mentorship",
+        caption: "Intimate indoor small-group conversation fostering trust, emotional support, and open guidance among youth.",
+        alt: "Azazi Foundation facilitator in yellow polo speaking closely with youth participants during an indoor small-group discussion"
+      },
+      officialCrest: {
+        src: "WhatsApp Image 2026-11-22 at 22.52.04 (2).jpeg",
+        title: "Official Azazi Foundation Gold Crest",
+        category: "Brand Identity",
+        caption: "The official Azazi Foundation emblem: a soaring golden bird encircled in strength against deep obsidian black.",
+        alt: "Official Azazi Foundation logo featuring a metallic gold soaring bird within a circle above bold gold serif lettering on a black background"
+      }
+    };
+
+    // ========== PROGRAMMES ==========
+    const PROGRAMMES_DATA = [
+      {
+        id: "youth-mentorship", number: "01",
+        title: "Youth Mentorship & Life Skills",
+        subtitle: "Guiding young minds toward purpose, confidence, and resilience",
+        icon: "message-circle",
+        photo: PHOTOS.mentorshipHero,
+        description: "Through structured group conversations and attentive personal guidance, Azazi Foundation facilitators walk alongside students and young people to nurture self-belief, positive decision-making, and academic focus.",
+        objectives: [
+          "Provide relatable role models and consistent moral encouragement to school-going youth.",
+          "Equip young people with practical communication, leadership, and life-navigation skills.",
+          "Create safe spaces where youth feel heard, valued, and supported."
+        ],
+        activities: [
+          "Interactive school & community mentorship circles",
+          "Peer-to-peer dialogue and personal goal-setting workshops",
+          "Character development and academic encouragement sessions"
+        ],
+        expectedOutcomes: "Increased student self-confidence, stronger school engagement, and resilient youth equipped to make constructive life choices."
+      },
+      {
+        id: "community-outreach", number: "02",
+        title: "Community & Child Outreach",
+        subtitle: "Showing up with warmth, solidarity, and uplifting presence",
+        icon: "users",
+        photo: PHOTOS.communityOutreach,
+        description: "Our team conducts vibrant, community-wide outreach visits—bringing together children, caregivers, and local leaders for shared learning, encouragement, and holistic community strengthening.",
+        objectives: [
+          "Foster inclusion, joy, and emotional well-being among children in underserved neighbourhoods.",
+          "Strengthen community bonds through participatory outdoor gatherings and mentorship.",
+          "Identify pressing household and child welfare needs directly at the grassroots level."
+        ],
+        activities: [
+          "Organized community outreach days and youth assemblies",
+          "Group encouragement, recreational engagement, and civic awareness",
+          "Direct collaboration with local community champions and educators"
+        ],
+        expectedOutcomes: "Empowered communities with stronger support networks and children who experience tangible care and belonging."
+      },
+      {
+        id: "welfare-facility-support", number: "03",
+        title: "Residential & Welfare Facility Support",
+        subtitle: "Advocating for safe, dignified living environments",
+        icon: "home",
+        photo: PHOTOS.facilityAssessment,
+        description: "Recognizing that environment shapes well-being, Azazi Foundation conducts on-site assessments of residential spaces, hostels, and care facilities to evaluate living conditions and mobilize targeted support.",
+        objectives: [
+          "Assess hygiene, bedding, safety, and living conditions in youth and community facilities.",
+          "Prioritize practical upgrades and essential material support where needs are most urgent.",
+          "Partner with donors and institutions to improve everyday dignity and comfort."
+        ],
+        activities: [
+          "On-ground facility walkthroughs and needs assessments",
+          "Distribution of essential welfare supplies and bedding support",
+          "Follow-up visits to monitor living conditions and facility improvements"
+        ],
+        expectedOutcomes: "Safer, cleaner, and more dignified residential environments that support health, rest, and personal dignity."
+      },
+      {
+        id: "psychosocial-peer-support", number: "04",
+        title: "Small-Group Dialogue & Psychosocial Care",
+        subtitle: "Confidential listening circles that restore hope and connection",
+        icon: "heart-handshake",
+        photo: PHOTOS.peerDialogue,
+        description: "In smaller, intimate settings, our facilitators host focused listening circles that allow youth and community members to share personal challenges openly and receive compassionate guidance.",
+        objectives: [
+          "Reduce isolation by encouraging open, judgment-free dialogue among peers.",
+          "Support emotional resilience and healthy coping strategies.",
+          "Connect vulnerable individuals to appropriate community support networks."
+        ],
+        activities: [
+          "Facilitated small-group listening and peer-counselling circles",
+          "Individual check-ins with trained foundation volunteers",
+          "Community wellness awareness and referral guidance"
+        ],
+        expectedOutcomes: "Improved emotional well-being, stronger peer solidarity, and timely support for individuals navigating difficult circumstances."
+      }
+    ];
+
+    // ========== NEWS ==========
+    const NEWS_EVENTS_DATA = [
+      {
+        id: "news-1", type: "Activity Update",
+        date: "[Editable Placeholder: Date — e.g., November 2026]",
+        location: "[Editable Placeholder: Outreach Location]",
+        title: "Grassroots Youth Mentorship & School Outreach Field Visit",
+        summary: "Azazi Foundation volunteers spent the day engaging students in interactive mentorship dialogues, encouraging academic dedication and personal resilience.",
+        fullContent: "[Editable Placeholder: Expand with verified details of this outreach visit, participating schools/centres, key highlights, and volunteer reflections.]",
+        photo: PHOTOS.mentorshipHero
+      },
+      {
+        id: "news-2", type: "Announcement",
+        date: "[Editable Placeholder: Date — e.g., November 2026]",
+        location: "[Editable Placeholder: Community Centre / Facility]",
+        title: "Residential & Welfare Facility Needs Assessment Completed",
+        summary: "Our field team conducted an on-site walkthrough of residential rooms and shared facilities to document priority welfare needs for upcoming support drives.",
+        fullContent: "[Editable Placeholder: Insert verified findings from the facility assessment, items needed for donation drives, and target completion timelines.]",
+        photo: PHOTOS.facilityAssessment
+      },
+      {
+        id: "news-3", type: "Upcoming Event",
+        date: "[Editable Placeholder: Upcoming Event Date]",
+        location: "[Editable Placeholder: Venue / Community Grounds]",
+        title: "Upcoming Community Youth Empowerment & Volunteer Mobilization Drive",
+        summary: "Join the Azazi Foundation team for our next community gathering focused on youth mentorship, peer support, and volunteer onboarding.",
+        fullContent: "[Editable Placeholder: Add verified event schedule, registration instructions for volunteers, and partnership sponsorship opportunities.]",
+        photo: PHOTOS.communityOutreach
+      }
+    ];
+
+    // ========== SVG CREST ==========
+    function crestSVG(className, idSuffix) {
+      const id = idSuffix || 'default';
+      return `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="${className || 'w-11 h-11'}" aria-hidden="true">
+        <defs>
+          <linearGradient id="azaziGold-${id}" x1="15" y1="15" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#F5DC7A"/>
+            <stop offset="45%" stop-color="#D4AF37"/>
+            <stop offset="75%" stop-color="#B68621"/>
+            <stop offset="100%" stop-color="#F2D06B"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 34C41.5 22.8 56.5 17.5 71.8 20.4C92.5 24.3 106.2 44.3 102.3 65C99.3 80.7 87.3 92.6 72.3 96.1" stroke="url(#azaziGold-${id})" stroke-width="6.5" stroke-linecap="round"/>
+        <path d="M23.5 57.5C23.2 72.8 31.4 87.1 44.8 94.3" stroke="url(#azaziGold-${id})" stroke-width="6.5" stroke-linecap="round"/>
+        <path d="M58 43.5C64.5 36.2 76.5 35.8 86.5 40.5C82.5 42.2 80.5 44.8 79.5 47.2C72.2 45.2 64.5 44.5 58 43.5Z" fill="url(#azaziGold-${id})"/>
+        <path d="M23 33.5C37.5 45.2 58.5 51.8 78.5 51.2C76.2 71.5 63.5 89.2 44.5 99.5C55.8 87.5 62.5 73.5 63.5 59.5C47.5 58.5 32.5 49.5 23 33.5Z" fill="url(#azaziGold-${id})"/>
+        <path d="M19.5 46.5C31.5 57.8 45.8 63.2 58.2 63.5C56.8 75.5 50.2 86.8 39.2 95.8C45.8 86.5 49.2 77.2 49.5 69.2C37.5 68.2 26.2 59.5 19.5 46.5Z" fill="url(#azaziGold-${id})"/>
+      </svg>`;
+    }
+
+    // ========== ICONS ==========
+    const ICONS = {
+      'message-circle': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>',
+      'users': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      'home': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+      'heart-handshake': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>',
+      'arrow-right': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>',
+      'chevron-right': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>',
+      'target': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+      'eye': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>',
+      'shield-check': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>',
+      'compass': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/></svg>',
+      'award': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>',
+      'check-circle': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>',
+      'camera': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>',
+      'maximize': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>',
+      'sparkles': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>',
+      'calendar': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>',
+      'map-pin': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+      'mail': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>',
+      'phone': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
+      'clock': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+      'globe': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+      'building': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>',
+      'heart': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+      'info': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
+      'x': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>',
+      'menu': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>',
+      'send': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>',
+      'alert-circle': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>'
+    };
+
+    // ========== IMAGE HELPER ==========
+    function imgHTML(photo, className, aspectClass) {
+      const cls = className || 'w-full h-full object-cover';
+      const asp = aspectClass || '';
+      return `<div class="relative overflow-hidden bg-[#141414] ${asp}">
+        <img src="${photo.src}" alt="${photo.alt}" loading="lazy"
+             class="${cls} transition-transform duration-700 ease-out"
+             onerror="this.parentElement.innerHTML=imgFallbackHTML(${JSON.stringify(photo).replace(/"/g, '&quot;')})">
+      </div>`;
+    }
+
+    function imgFallbackHTML(photo) {
+      return `<div class="img-fallback">
+        ${crestSVG('', 'fallback')}
+        <p class="fallback-title">${photo.title}</p>
+        <p class="fallback-caption">${photo.caption}</p>
+      </div>`;
+    }
+
+    // ========== PLACEHOLDER BADGE ==========
+    function placeholderBadge(label) {
+      return `<span class="placeholder-badge">${ICONS['info']} ${label || 'Verified Data Placeholder'}</span>`;
+    }
+
+    // ========== SECTION HEADER ==========
+    function sectionHeader(eyebrow, title, description, align, dark) {
+      const alignClass = align === 'center' ? 'center' : '';
+      const darkClass = dark ? 'dark' : '';
+      const centerLines = align === 'center'
+        ? '<span class="line" style="width:1.5rem;height:2px;background:var(--gold);"></span>'
+        : '';
+      return `<div class="section-header ${alignClass} ${darkClass}">
+        ${eyebrow ? `<div class="eyebrow">
+          <span class="line"></span>
+          <span>${eyebrow}</span>
+          ${centerLines}
+        </div>` : ''}
+        <h2>${title}</h2>
+        ${description ? `<p>${description}</p>` : ''}
+      </div>`;
+    }
+
+    // ========== RENDER: HOME PAGE ==========
+    function renderHomePage() {
+      return `
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-blob-1"></div>
+        <div class="hero-blob-2"></div>
+        <div class="container" style="position:relative;z-index:10;">
+          <div class="hero-grid">
+            <div>
+              <div class="hero-pill">
+                ${crestSVG('', 'hero-pill')}
+                <span>Azazi Foundation • Grassroots Impact</span>
+              </div>
+              <h1>Empowering Communities, <span class="gradient-text">Uplifting Futures.</span></h1>
+              <p class="hero-desc">Azazi Foundation stands beside youth, children, and underserved communities—bringing attentive mentorship, practical welfare support, and human-centred outreach where it matters most.</p>
+              <div class="hero-actions">
+                <button class="btn btn-primary" data-nav="programmes">
+                  <span>Explore Our Programmes</span>
+                  ${ICONS['arrow-right']}
+                </button>
+                <button class="btn btn-secondary" data-nav="get-involved">
+                  <span>Partner With Us</span>
+                </button>
+              </div>
+              <div class="hero-stats">
+                <div>
+                  <p class="hero-stat-label">Mentorship</p>
+                  <p class="hero-stat-desc">Youth & Student Guidance</p>
+                </div>
+                <div>
+                  <p class="hero-stat-label">Outreach</p>
+                  <p class="hero-stat-desc">Community & Child Care</p>
+                </div>
+                <div>
+                  <p class="hero-stat-label">Welfare</p>
+                  <p class="hero-stat-desc">Dignified Living Support</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="hero-image-wrap">
+                <div class="hero-image-offset"></div>
+                <div class="hero-image-card">
+                  ${imgHTML(PHOTOS.mentorshipHero, 'w-full h-full object-cover', 'aspect-[4/3]')}
+                  <div class="hero-image-footer">
+                    <div>
+                      <span class="hero-image-tag">Field Mentorship</span>
+                      <p class="hero-image-caption">Direct, compassionate engagement with students during community outreach.</p>
+                    </div>
+                    <button class="lightbox-trigger" data-lightbox="mentorshipHero" aria-label="Enlarge mentorship photograph">
+                      ${ICONS['maximize']}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section-padding" style="background:white;border-bottom:1px solid rgba(229,229,229,0.7);">
+        <div class="container">
+          <div class="about-grid">
+            <div>
+              <div class="about-image-wrap">
+                ${imgHTML(PHOTOS.teamPortrait, 'w-full h-full object-cover', 'aspect-[4/3]')}
+                <div class="about-image-caption"><strong>United in Purpose:</strong> Azazi Foundation volunteers during a community field visit.</div>
+              </div>
+            </div>
+            <div>
+              ${sectionHeader('Who We Are', 'A Grassroots Movement Built on Presence, Dignity, and Hope', 'Azazi Foundation brings together passionate mentors, advocates, and volunteers committed to showing up personally in schools, residential centres, and neighbourhoods.')}
+              <p style="color:var(--neutral-600);line-height:1.7;">True transformation begins when people feel seen, listened to, and supported. Whether sitting eye-to-eye with young learners, assessing residential living conditions, or mobilizing community gatherings, our team works directly alongside the communities we serve.</p>
+              <div class="mission-vision-grid">
+                <div class="mv-card">
+                  <div class="mv-icon">${ICONS['target']}</div>
+                  <div>
+                    <h3 class="mv-title">Our Mission</h3>
+                    <p class="mv-desc">${SITE_CONFIG.about.mission}</p>
+                  </div>
+                </div>
+                <div class="mv-card">
+                  <div class="mv-icon">${ICONS['eye']}</div>
+                  <div>
+                    <h3 class="mv-title">Our Vision</h3>
+                    <p class="mv-desc">${SITE_CONFIG.about.vision}</p>
+                  </div>
+                </div>
+              </div>
+              <div style="padding-top:1.5rem;">
+                <button class="card-link" data-nav="about" style="font-size:0.875rem;">
+                  <span>Read More About Our Identity & Values</span>
+                  ${ICONS['arrow-right']}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAMMES -->
+      <section class="section-padding" style="background:var(--cream);">
+        <div class="container">
+          ${sectionHeader('What We Do', 'Core Programmes & Community Initiatives', 'Our work is anchored in four practical pillars designed to nurture young potential and strengthen community well-being.', 'center')}
+          <div class="grid-4">
+            ${PROGRAMMES_DATA.map(prog => `
+              <article class="card">
+                <div class="card-img">
+                  ${imgHTML(prog.photo, 'w-full h-full object-cover', 'h-full')}
+                  <div class="programme-number">${prog.number}</div>
+                </div>
+                <div class="card-body">
+                  <div class="prog-icon" style="margin-bottom:0.75rem;display:inline-flex;padding:0.625rem;border-radius:0.75rem;background:rgba(250,204,21,0.2);">${ICONS[prog.icon] || ''}</div>
+                  <h3 class="card-title">${prog.title}</h3>
+                  <p class="card-desc">${prog.description}</p>
+                  <button class="card-link" data-nav="programmes">
+                    <span>Explore Programme</span>
+                    ${ICONS['chevron-right']}
+                  </button>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="section-padding stats-section">
+        <div class="container">
+          <div class="stats-header">
+            <div>
+              <span class="stats-eyebrow">Measurable Accountability</span>
+              <h2 class="stats-title">Our Footprint & Community Reach</h2>
+            </div>
+            ${placeholderBadge('Editable Metrics — Replace with Audited Figures')}
+          </div>
+          <div class="grid-4">
+            ${SITE_CONFIG.impactStats.map(stat => `
+              <div class="stat-card">
+                <p class="stat-value">${stat.value}</p>
+                <p class="stat-label">${stat.label}</p>
+                <p class="stat-note">${stat.note}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED ACTIVITIES -->
+      <section class="section-padding" style="background:white;">
+        <div class="container">
+          <div class="activities-header">
+            ${sectionHeader('In The Field', 'Featured Activities & Recent Initiatives', 'Snapshots of our volunteers actively engaging communities, listening to youth, and assessing welfare needs.')}
+            <button class="btn btn-dark" data-nav="impact" style="margin-bottom:3rem;align-self:flex-start;">
+              ${ICONS['camera']}
+              <span>View Full Gallery</span>
+            </button>
+          </div>
+          <div class="grid-3">
+            ${[PHOTOS.communityOutreach, PHOTOS.facilityAssessment, PHOTOS.peerDialogue].map(photo => `
+              <div class="activity-card">
+                <div class="activity-card-img">
+                  ${imgHTML(photo, 'w-full h-full object-cover', 'h-full')}
+                  <button class="lightbox-trigger" style="position:absolute;bottom:0.75rem;right:0.75rem;" data-lightbox="${Object.keys(PHOTOS).find(k => PHOTOS[k] === photo)}" aria-label="View full size: ${photo.title}">
+                    ${ICONS['maximize']}
+                  </button>
+                </div>
+                <div class="activity-card-body">
+                  <span class="activity-category">${photo.category}</span>
+                  <h3 class="activity-title">${photo.title}</h3>
+                  <p class="activity-desc">${photo.caption}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section-padding" style="background:var(--cream);border-top:1px solid rgba(229,229,229,0.7);">
+        <div class="container">
+          ${sectionHeader('Community Voices', 'Reflections from Youth, Educators & Partners', 'Real stories of encouragement and collaboration from the communities we serve.', 'center')}
+          <div class="grid-3">
+            ${[
+              { role: 'Student Mentorship Participant', quote: '[Editable Placeholder: Insert verified quote from a student or youth participant reflecting on how Azazi Foundation\'s mentorship sessions impacted their confidence and outlook.]', attribution: '[Editable Placeholder: Verified Participant Name / School]' },
+              { role: 'Host Institution Representative', quote: '[Editable Placeholder: Insert verified feedback from a school headteacher, centre coordinator, or local leader who hosted the Azazi Foundation outreach team.]', attribution: '[Editable Placeholder: Verified Educator / Coordinator Name]' },
+              { role: 'Community Volunteer', quote: '[Editable Placeholder: Insert verified reflection from an Azazi Foundation volunteer sharing what serving alongside the team means to them.]', attribution: '[Editable Placeholder: Verified Volunteer Name]' }
+            ].map(item => `
+              <div class="testimonial-card">
+                <div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;">
+                    <span class="testimonial-quote-mark">&ldquo;</span>
+                    ${placeholderBadge('Editable Quote')}
+                  </div>
+                  <p class="testimonial-text">${item.quote}</p>
+                </div>
+                <div class="testimonial-footer">
+                  <p class="testimonial-name">${item.attribution}</p>
+                  <p class="testimonial-role">${item.role}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section class="section-padding" style="background:white;">
+        <div class="container">
+          <div class="cta-banner">
+            <div class="cta-blob"></div>
+            <div class="cta-inner">
+              <div>
+                <div class="cta-eyebrow">${ICONS['sparkles']}<span>Join The Mission</span></div>
+                <h2 class="cta-title">Together, We Can Help Every Young Person Soar.</h2>
+                <p class="cta-desc">Whether you are an individual mentor, corporate sponsor, school, or community partner, your collaboration strengthens our grassroots reach.</p>
+              </div>
+              <div class="cta-actions">
+                <button class="cta-btn cta-btn-primary" data-nav="get-involved">Become a Partner or Donor</button>
+                <button class="cta-btn cta-btn-secondary" data-nav="contact">Contact Our Team</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // ========== RENDER: ABOUT PAGE ==========
+    function renderAboutPage() {
+      const coreValues = [
+        { title: 'Dignity & Respect', icon: 'shield-check', desc: 'We honour the inherent worth of every child, youth, and community member—listening first and serving without judgment.' },
+        { title: 'Grassroots Presence', icon: 'compass', desc: 'We believe meaningful impact happens in person—walking into classrooms, communities, and residential spaces with genuine care.' },
+        { title: 'Integrity & Transparency', icon: 'award', desc: 'We steward every partnership, volunteer hour, and community resource with accountability, honesty, and clear purpose.' },
+        { title: 'Collective Empowerment', icon: 'heart-handshake', desc: 'Like our soaring bird emblem, we aim to equip individuals with the confidence and support needed to rise sustainably.' }
+      ];
+
+      return `
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-inner">
+            <span class="eyebrow">About Azazi Foundation</span>
+            <h1>Rooted in Compassion, Driven by Community Action</h1>
+            <p>Discover our identity, mission, core values, and the dedicated people behind Azazi Foundation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:white;">
+        <div class="container">
+          <div class="story-grid">
+            <div>
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+                <span style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold-dark);">Our Background & Story</span>
+                ${placeholderBadge('Editable Founding Record')}
+              </div>
+              <h2 style="font-family:var(--font-serif);font-size:2.25rem;font-weight:700;color:var(--black);">Building Bridges of Hope & Mentorship</h2>
+              <div class="story-meta">
+                <div class="story-meta-row">
+                  <div><strong>Established:</strong> ${SITE_CONFIG.about.foundingYear}</div>
+                  <div><strong>Registration:</strong> ${SITE_CONFIG.about.registrationStatus}</div>
+                </div>
+                <p>${SITE_CONFIG.about.historyNarrative}</p>
+              </div>
+              <p style="color:var(--neutral-600);line-height:1.7;margin-top:1rem;">Across every initiative, our signature yellow and obsidian uniforms represent visibility, warmth, and solidarity—reminding young people and families that they do not walk their journey alone.</p>
+            </div>
+            <div>
+              <div class="crest-card">
+                <div class="crest-image">
+                  ${imgHTML(PHOTOS.officialCrest, 'w-full h-full object-contain', 'w-full h-full')}
+                </div>
+                <div>
+                  <h3 class="crest-title">THE AZAZI CREST</h3>
+                  <p class="crest-desc">${SITE_CONFIG.brandIdentityNote}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:var(--cream);border-top:1px solid rgba(229,229,229,0.8);border-bottom:1px solid rgba(229,229,229,0.8);">
+        <div class="container">
+          <div class="mission-vision-cards">
+            <div class="mv-large-card dark">
+              <div class="mv-large-icon">${ICONS['target']}</div>
+              <h2>Our Mission</h2>
+              <p>${SITE_CONFIG.about.mission}</p>
+            </div>
+            <div class="mv-large-card light">
+              <div class="mv-large-icon">${ICONS['eye']}</div>
+              <h2>Our Vision</h2>
+              <p>${SITE_CONFIG.about.vision}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:white;">
+        <div class="container">
+          ${sectionHeader('What Guides Us', 'Our Core Values', 'Every outreach visit, mentorship dialogue, and community partnership is anchored in these four principles.', 'center')}
+          <div class="grid-4">
+            ${coreValues.map(val => `
+              <div class="value-card">
+                <div class="value-icon">${ICONS[val.icon] || ''}</div>
+                <h3>${val.title}</h3>
+                <p>${val.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:var(--cream);border-top:1px solid rgba(229,229,229,0.8);">
+        <div class="container">
+          ${sectionHeader('Our People', 'Leadership & Grassroots Outreach Team', 'Dedicated mentors, coordinators, and volunteers working hand-in-hand to deliver meaningful community support.', 'center')}
+          <div class="team-banner">
+            <div class="team-banner-img">
+              ${imgHTML(PHOTOS.teamPortrait, 'w-full h-full object-cover', '')}
+            </div>
+            <div class="team-banner-content">
+              <span class="eyebrow">Team Solidarity</span>
+              <h3>United in Service on the Ground</h3>
+              <p>Our volunteers and coordinators bring diverse strengths in youth mentorship, community mobilization, and welfare advocacy—united under the Azazi Foundation banner.</p>
+              <div style="padding-top:1rem;">
+                <button class="btn btn-primary" data-nav="get-involved">
+                  <span>Join Our Volunteer Team</span>
+                  ${ICONS['arrow-right']}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+            <h3 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:700;color:var(--black);">Leadership Directory</h3>
+            ${placeholderBadge('Editable Leadership Profiles')}
+          </div>
+          <div class="grid-3">
+            ${SITE_CONFIG.leadership.map(leader => `
+              <div class="leader-card">
+                <div class="leader-avatar">${crestSVG('', leader.id)}</div>
+                <h4 class="leader-name">${leader.name}</h4>
+                <p class="leader-role">${leader.role}</p>
+                <p class="leader-bio">${leader.bio}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // ========== RENDER: PROGRAMMES PAGE ==========
+    function renderProgrammesPage() {
+      return `
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-inner">
+            <span class="eyebrow">Our Programmes</span>
+            <h1>Practical, People-First Programmes That Create Lasting Change</h1>
+            <p>Explore how Azazi Foundation translates compassion into structured mentorship, community outreach, and welfare support.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:white;">
+        <div class="container">
+          ${PROGRAMMES_DATA.map((prog, index) => {
+            const isEven = index % 2 === 1;
+            return `
+            <article class="programme-article" id="${prog.id}">
+              <div class="prog-image ${isEven ? 'order-2' : ''}">
+                <div class="prog-image-card">
+                  ${imgHTML(prog.photo, 'w-full h-full object-cover', 'aspect-[4/3]')}
+                  <div class="prog-image-caption">${prog.photo.caption}</div>
+                </div>
+              </div>
+              <div class="prog-content ${isEven ? 'order-1' : ''}">
+                <div class="prog-header">
+                  <span class="prog-number">Programme ${prog.number}</span>
+                  <div class="prog-icon">${ICONS[prog.icon] || ''}</div>
+                </div>
+                <h2 class="prog-title">${prog.title}</h2>
+                <p class="prog-subtitle">${prog.subtitle}</p>
+                <p class="prog-desc">${prog.description}</p>
+                <div class="prog-lists">
+                  <div class="prog-list-card">
+                    <h3 class="prog-list-title">Key Objectives</h3>
+                    <ul class="prog-list">
+                      ${prog.objectives.map(obj => `<li><span class="check">${ICONS['check-circle']}</span><span>${obj}</span></li>`).join('')}
+                    </ul>
+                  </div>
+                  <div class="prog-list-card">
+                    <h3 class="prog-list-title">Core Activities</h3>
+                    <ul class="prog-list">
+                      ${prog.activities.map(act => `<li><span class="dot"></span><span>${act}</span></li>`).join('')}
+                    </ul>
+                  </div>
+                </div>
+                <div class="prog-outcome">
+                  <p class="prog-outcome-title">Expected Outcome</p>
+                  <p>${prog.expectedOutcomes}</p>
+                </div>
+              </div>
+            </article>`;
+          }).join('')}
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:var(--cream);border-top:1px solid var(--neutral-200);padding:3.5rem 0;">
+        <div class="container" style="max-width:56rem;text-align:center;">
+          <h2 style="font-family:var(--font-serif);font-size:1.875rem;font-weight:700;color:var(--black);margin-bottom:1.25rem;">Want to Support or Host an Azazi Foundation Programme?</h2>
+          <p style="color:var(--neutral-600);margin-bottom:1.5rem;">We collaborate with schools, residential care centres, community leaders, and sponsors to bring these initiatives to more communities.</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;">
+            <button class="btn btn-primary" data-nav="get-involved">Partner With Us</button>
+            <button class="btn btn-dark" data-nav="contact">Request a Community Visit</button>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // ========== RENDER: IMPACT PAGE ==========
+    function renderImpactPage() {
+      const galleryPhotos = [PHOTOS.mentorshipHero, PHOTOS.communityOutreach, PHOTOS.teamPortrait, PHOTOS.facilityAssessment, PHOTOS.peerDialogue];
+      const categories = ['All', 'Mentorship', 'Community Outreach', 'Welfare Support', 'Our Team'];
+
+      return `
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-inner">
+            <span class="eyebrow">Our Impact</span>
+            <h1>Documenting Action, Accountability & Human Connection</h1>
+            <p>Explore our community milestones, field documentation gallery, and the tangible difference made through grassroots service.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:white;border-bottom:1px solid rgba(229,229,229,0.8);">
+        <div class="container">
+          <div class="impact-header">
+            <div>
+              <h2 class="impact-title">Impact Indicators & Milestones</h2>
+              <p class="impact-subtitle">Structured metrics ready for verified reporting updates.</p>
+            </div>
+            ${placeholderBadge('Update with Audited Figures in SITE_CONFIG')}
+          </div>
+          <div class="grid-4">
+            ${SITE_CONFIG.impactStats.map(stat => `
+              <div class="impact-stat-card">
+                <p class="stat-value">${stat.value}</p>
+                <p class="stat-label">${stat.label}</p>
+                <p class="stat-note">${stat.note}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:var(--cream);">
+        <div class="container">
+          <div class="grid-2">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-title">Key Projects & Milestones</h3>
+                ${placeholderBadge('Editable Timeline')}
+              </div>
+              <ul class="timeline">
+                ${[
+                  { period: '[Editable Placeholder: Milestone Phase 1]', title: 'School & Youth Mentorship Outreach Launch', detail: 'Initiated interactive mentorship circles engaging students in personal development and peer encouragement.' },
+                  { period: '[Editable Placeholder: Milestone Phase 2]', title: 'Residential & Welfare Facility Assessments', detail: 'Conducted structured walkthroughs of residential living quarters to document hygiene, bedding, and facility support priorities.' },
+                  { period: '[Editable Placeholder: Milestone Phase 3]', title: 'Expanded Community Outreach & Volunteer Mobilization', detail: 'Strengthened volunteer coordination and hosted multi-group community encouragement gatherings.' }
+                ].map(m => `
+                  <li class="timeline-item">
+                    <p class="timeline-period">${m.period}</p>
+                    <h4>${m.title}</h4>
+                    <p>${m.detail}</p>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-title">Beneficiary & Community Stories</h3>
+                ${placeholderBadge('Editable Case Studies')}
+              </div>
+              <div>
+                ${[
+                  { tag: 'Youth Mentorship', headline: 'Finding Confidence Through Attentive Guidance', story: '[Editable Placeholder: Document a verified, consent-approved story of how small-group mentorship helped a young student overcome self-doubt and stay committed to their education.]' },
+                  { tag: 'Welfare Advocacy', headline: 'Improving Everyday Dignity in Shared Living Spaces', story: '[Editable Placeholder: Document a verified summary of how Azazi Foundation\'s facility assessment led to tangible improvements in bedding, sanitation, or student welfare.]' }
+                ].map(story => `
+                  <div class="story-card">
+                    <span class="story-tag">${story.tag}</span>
+                    <h4>${story.headline}</h4>
+                    <p>${story.story}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:white;border-top:1px solid var(--neutral-200);">
+        <div class="container">
+          ${sectionHeader('Visual Documentation', 'Azazi Foundation in Action', "Authentic field photographs capturing our team's mentorship dialogues, community gatherings, and facility assessments.", 'center')}
+          <div class="filter-bar" role="tablist" id="gallery-filters">
+            ${categories.map(cat => `
+              <button class="filter-btn ${cat === 'All' ? 'active' : ''}" data-filter="${cat}" role="tab" aria-selected="${cat === 'All'}">${cat}</button>
+            `).join('')}
+          </div>
+          <div class="grid-3" id="gallery-grid">
+            ${galleryPhotos.map(photo => `
+              <div class="gallery-card" data-lightbox="${Object.keys(PHOTOS).find(k => PHOTOS[k] === photo)}" data-category="${photo.category}" tabindex="0" role="button" aria-label="Open full-screen view of ${photo.title}">
+                ${imgHTML(photo, 'w-full h-full object-cover', 'aspect-[4/3]')}
+                <div class="gallery-card-body">
+                  <span class="gallery-category">${photo.category}</span>
+                  <h3 class="gallery-title">${photo.title}</h3>
+                  <p class="gallery-caption">${photo.caption}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // ========== RENDER: GET INVOLVED PAGE ==========
+    function renderGetInvolvedPage() {
+      return `
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-inner">
+            <span class="eyebrow">Get Involved</span>
+            <h1>Stand With Us to Empower the Next Generation</h1>
+            <p>Your time, expertise, institutional partnership, or material contribution directly fuels our community mentorship and welfare outreach.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:white;">
+        <div class="container">
+          <div class="grid-3">
+            <div class="involved-card light">
+              <div>
+                <div class="involved-icon">${ICONS['users']}</div>
+                <h2>Volunteer With Us</h2>
+                <p>Join our field team during school visits, community assemblies, and welfare drives. We welcome compassionate mentors, youth facilitators, and event organizers.</p>
+                <ul class="involved-list">
+                  <li><span class="check">${ICONS['check-circle']}</span><span>Youth Mentorship & Peer Dialogue Facilitation</span></li>
+                  <li><span class="check">${ICONS['check-circle']}</span><span>Community Outreach Logistics & Coordination</span></li>
+                  <li><span class="check">${ICONS['check-circle']}</span><span>Documentation, Photography & Media Support</span></li>
+                </ul>
+              </div>
+              <button class="involved-btn" id="open-volunteer-modal">Express Interest to Volunteer</button>
+            </div>
+
+            <div class="involved-card dark">
+              <div>
+                <div class="involved-icon">${ICONS['building']}</div>
+                <h2>Institutional Partnerships</h2>
+                <p>We partner with schools, residential care facilities, faith-based organizations, NGOs, and corporate CSR teams to scale sustainable community support.</p>
+                <ul class="involved-list">
+                  <li><span class="check">${ICONS['check-circle']}</span><span>Co-hosted Youth Empowerment & Career Days</span></li>
+                  <li><span class="check">${ICONS['check-circle']}</span><span>Residential & Dormitory Facility Upgrade Sponsorships</span></li>
+                  <li><span class="check">${ICONS['check-circle']}</span><span>Joint Grassroots Welfare & Advocacy Campaigns</span></li>
+                </ul>
+              </div>
+              <button class="involved-btn" data-nav="contact">Propose a Partnership</button>
+            </div>
+
+            <div class="involved-card light">
+              <div>
+                <div class="involved-icon">${ICONS['heart']}</div>
+                <h2>Ways to Support</h2>
+                <p>Support our outreach through verified financial contributions or essential in-kind donations for youth and residential care centres.</p>
+                <div style="margin-top:0.5rem;">
+                  ${SITE_CONFIG.donationChannels.map(ch => `
+                    <div class="donation-channel">
+                      <p class="donation-method">${ch.method}</p>
+                      <p class="donation-details">${ch.details}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+              <button class="involved-btn" data-nav="contact">Coordinate a Contribution</button>
+            </div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // ========== RENDER: NEWS PAGE ==========
+    function renderNewsPage() {
+      const types = ['All', 'Activity Update', 'Announcement', 'Upcoming Event'];
+      return `
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-inner">
+            <span class="eyebrow">News & Events</span>
+            <h1>Outreach Updates, Announcements & Upcoming Gatherings</h1>
+            <p>Follow the latest field reports and upcoming community engagements from Azazi Foundation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:var(--cream);">
+        <div class="container">
+          <div class="news-filters">
+            <div class="news-filter-group" id="news-filters">
+              ${types.map(t => `
+                <button class="news-filter-btn ${t === 'All' ? 'active' : ''}" data-news-filter="${t}">${t}</button>
+              `).join('')}
+            </div>
+            ${placeholderBadge('Editable Dates & Event Details')}
+          </div>
+          <div class="grid-3" id="news-grid">
+            ${NEWS_EVENTS_DATA.map(article => `
+              <article class="news-card" data-news-type="${article.type}">
+                <div class="news-card-img">
+                  ${imgHTML(article.photo, 'w-full h-full object-cover', 'h-full')}
+                  <span class="news-type-badge">${article.type}</span>
+                </div>
+                <div class="news-card-body">
+                  <div style="display:flex;flex-direction:column;gap:0.625rem;">
+                    <div class="news-date">${ICONS['calendar']}<span>${article.date}</span></div>
+                    <h2>${article.title}</h2>
+                    <p class="news-summary">${article.summary}</p>
+                  </div>
+                  <button class="news-read-more" data-news-open="${article.id}">
+                    <span>Read Full Update</span>
+                    ${ICONS['arrow-right']}
+                  </button>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // ========== RENDER: CONTACT PAGE ==========
+    function renderContactPage() {
+      return `
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-inner">
+            <span class="eyebrow">Contact Us</span>
+            <h1>Connect With the Azazi Foundation Team</h1>
+            <p>Have a question about our programmes, volunteer opportunities, or community partnerships? Reach out to us directly.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding" style="background:var(--cream);">
+        <div class="container">
+          <div class="contact-grid">
+            <div>
+              <div class="contact-info-card">
+                <h2>Official Contact Details</h2>
+                ${placeholderBadge('Update with Verified Contact Records')}
+                <div style="margin-top:1.5rem;">
+                  <div class="contact-detail">
+                    <div class="contact-detail-icon">${ICONS['mail']}</div>
+                    <div><p class="contact-label">Email</p><p class="contact-value">${SITE_CONFIG.contact.email}</p></div>
+                  </div>
+                  <div class="contact-detail">
+                    <div class="contact-detail-icon">${ICONS['phone']}</div>
+                    <div><p class="contact-label">Telephone / WhatsApp</p><p class="contact-value">${SITE_CONFIG.contact.phone}</p></div>
+                  </div>
+                  <div class="contact-detail">
+                    <div class="contact-detail-icon">${ICONS['map-pin']}</div>
+                    <div><p class="contact-label">Physical Location</p><p class="contact-value">${SITE_CONFIG.contact.address}</p></div>
+                  </div>
+                  <div class="contact-detail">
+                    <div class="contact-detail-icon">${ICONS['clock']}</div>
+                    <div><p class="contact-label">Outreach & Office Hours</p><p class="contact-value">${SITE_CONFIG.contact.workingHours}</p></div>
+                  </div>
+                </div>
+                <div class="contact-socials">
+                  <p class="contact-socials-title">Official Social Channels</p>
+                  <div class="contact-socials-grid">
+                    ${SITE_CONFIG.contact.socials.map(s => `
+                      <div class="social-item">
+                        <p class="social-item-name">${s.name}</p>
+                        <p class="social-item-handle">${s.handle}</p>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+              <div class="map-card">
+                <div class="map-card-title">${ICONS['globe']}<span>Location & Map Reference</span></div>
+                <div class="map-placeholder">
+                  ${ICONS['map-pin']}
+                  <strong>Interactive Map Embed Ready</strong>
+                  <span>${SITE_CONFIG.contact.mapCoordinatesLabel}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form-card">
+              <h2>Send Us a Message</h2>
+              <p class="contact-form-desc">Complete the form below and our coordination team will respond promptly.</p>
+              <div id="contact-form-alert"></div>
+              <form id="contact-form" novalidate style="margin-top:1.5rem;">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="contact-name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="contact-name" class="form-input" placeholder="Enter your full name">
+                    <p class="form-error-msg" id="error-name" style="display:none;"></p>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="contact-email" class="form-input" placeholder="you@example.com">
+                    <p class="form-error-msg" id="error-email" style="display:none;"></p>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-top:1.25rem;">
+                  <label for="contact-subject">Subject <span class="required">*</span></label>
+                  <select id="contact-subject" class="form-select">
+                    <option value="">Select a topic...</option>
+                    <option value="Partnership Inquiry">Partnership & Institutional Collaboration</option>
+                    <option value="Volunteer Application">Volunteering & Mentorship</option>
+                    <option value="Programme / School Visit Request">Request a School or Community Visit</option>
+                    <option value="Donation / In-Kind Support">Donation & In-Kind Support</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                  </select>
+                  <p class="form-error-msg" id="error-subject" style="display:none;"></p>
+                </div>
+                <div class="form-group" style="margin-top:1.25rem;">
+                  <label for="contact-message">Message <span class="required">*</span></label>
+                  <textarea id="contact-message" class="form-textarea" placeholder="Tell us how we can assist you..."></textarea>
+                  <p class="form-error-msg" id="error-message" style="display:none;"></p>
+                </div>
+                <button type="submit" class="form-submit" id="contact-submit">
+                  ${ICONS['send']}
+                  <span>Send Message</span>
+                </button>
+                <button type="button" class="btn btn-outline" id="download-inquiries" style="width:100%;margin-top:0.75rem;">
+                  Download Saved Inquiries
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    // ========== NAVIGATION ==========
+    const NAV_ITEMS = [
+      { id: 'home', label: 'Home' },
+      { id: 'about', label: 'About Us' },
+      { id: 'programmes', label: 'Our Programmes' },
+      { id: 'impact', label: 'Our Impact' },
+      { id: 'get-involved', label: 'Get Involved' },
+      { id: 'news', label: 'News & Events' },
+      { id: 'contact', label: 'Contact Us' }
+    ];
+
+    const PAGE_TITLES = {
+      home: { title: 'Azazi Foundation | Empowering Communities, Uplifting Futures', desc: 'Official website of Azazi Foundation. Dedicated to youth mentorship, child outreach, welfare facility support, and community empowerment.' },
+      about: { title: 'About Us | Azazi Foundation — Mission, Vision & Team', desc: "Learn about Azazi Foundation's mission, vision, core values, brand identity, and dedicated grassroots team." },
+      programmes: { title: 'Our Programmes | Azazi Foundation Initiatives', desc: 'Explore Azazi Foundation programmes in Youth Mentorship, Community & Child Outreach, Welfare Facility Support, and Peer Counselling.' },
+      impact: { title: 'Our Impact & Field Gallery | Azazi Foundation', desc: "Discover Azazi Foundation's community milestones, beneficiary reflections, and field photography gallery." },
+      'get-involved': { title: 'Get Involved | Volunteer & Partner with Azazi Foundation', desc: 'Support Azazi Foundation through volunteering, institutional partnerships, or material and financial contributions.' },
+      news: { title: 'News & Events | Azazi Foundation Updates', desc: "Stay updated with Azazi Foundation's latest outreach reports, announcements, and upcoming community events." },
+      contact: { title: 'Contact Us | Connect with Azazi Foundation', desc: 'Reach out to Azazi Foundation for partnerships, volunteer inquiries, and community collaboration.' }
+    };
+
+    // ========== STATE ==========
+    let activePage = 'home';
+    let mobileMenuOpen = false;
+    let scrolled = false;
+
+    // ========== INIT ==========
+    function init() {
+      // Inject crests
+      document.getElementById('logo-crest-header').innerHTML = crestSVG('w-10 h-10 sm:w-11 sm:h-11', 'header');
+      document.getElementById('logo-crest-footer').innerHTML = crestSVG('w-12 h-12', 'footer');
+
+      // Render nav
+      renderNav();
+      renderFooter();
+
+      // Render pages
+      document.getElementById('page-home').innerHTML = renderHomePage();
+      document.getElementById('page-about').innerHTML = renderAboutPage();
+      document.getElementById('page-programmes').innerHTML = renderProgrammesPage();
+      document.getElementById('page-impact').innerHTML = renderImpactPage();
+      document.getElementById('page-get-involved').innerHTML = renderGetInvolvedPage();
+      document.getElementById('page-news').innerHTML = renderNewsPage();
+      document.getElementById('page-contact').innerHTML = renderContactPage();
+
+      // Set year
+      document.getElementById('footer-year').textContent = new Date().getFullYear();
+      document.getElementById('footer-reg').textContent = SITE_CONFIG.about.registrationStatus;
+
+      // Set up events
+      setupNavEvents();
+      setupScrollEvents();
+      setupLightboxEvents();
+      setupNewsEvents();
+      setupVolunteerModal();
+      setupContactForm();
+      setupGalleryFilters();
+      setupNewsFilters();
+      setupKeyboardEvents();
+
+      // Navigate to home
+      navigateTo('home');
+    }
+
+    // ========== RENDER NAV ==========
+    function renderNav() {
+      // Desktop nav
+      const desktopNav = document.getElementById('desktop-nav');
+      desktopNav.innerHTML = NAV_ITEMS.map(item => `
+        <button class="nav-link ${item.id === activePage ? 'active' : ''}" data-nav="${item.id}">${item.label}</button>
+      `).join('');
+
+      // Mobile nav
+      const mobileNavItems = document.getElementById('mobile-nav-items');
+      mobileNavItems.innerHTML = NAV_ITEMS.map(item => `
+        <button class="mobile-nav-link ${item.id === activePage ? 'active' : ''}" data-nav="${item.id}">
+          <span>${item.label}</span>
+          ${ICONS['chevron-right']}
+        </button>
+      `).join('');
+    }
+
+    // ========== RENDER FOOTER ==========
+    function renderFooter() {
+      // Socials
+      document.getElementById('footer-socials').innerHTML = SITE_CONFIG.contact.socials.map(s => `
+        <button class="footer-social-link" data-nav="contact" aria-label="Azazi Foundation on ${s.name}">${s.name}</button>
+      `).join('');
+
+      // Explore links
+      document.getElementById('footer-explore').innerHTML = NAV_ITEMS.slice(0, 5).map(item => `
+        <li><button data-nav="${item.id}">${item.label}</button></li>
+      `).join('');
+
+      // Programmes
+      document.getElementById('footer-programmes').innerHTML = PROGRAMMES_DATA.map(prog => `
+        <li><button data-nav="programmes">${prog.title}</button></li>
+      `).join('');
+
+      // Contact
+      document.getElementById('footer-contact').innerHTML = `
+        <li>${ICONS['map-pin']}<span>${SITE_CONFIG.contact.address}</span></li>
+        <li>${ICONS['mail']}<span class="break">${SITE_CONFIG.contact.email}</span></li>
+        <li>${ICONS['phone']}<span>${SITE_CONFIG.contact.phone}</span></li>
+      `;
+    }
+
+    // ========== NAVIGATE ==========
+    function navigateTo(pageId) {
+      if (!document.getElementById('page-' + pageId)) return;
+
+      activePage = pageId;
+      mobileMenuOpen = false;
+
+      // Update page visibility
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const targetPage = document.getElementById('page-' + pageId);
+      if (targetPage) targetPage.classList.add('active');
+
+      // Update nav states
+      document.querySelectorAll('[data-nav]').forEach(btn => {
+        if (btn.classList.contains('nav-link') || btn.classList.contains('mobile-nav-link')) {
+          btn.classList.toggle('active', btn.dataset.nav === pageId);
+        }
+      });
+
+      // Close mobile menu
+      document.getElementById('mobile-nav').classList.remove('open');
+      document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false');
+      updateMobileIcon(false);
+
+      // Update meta
+      const meta = PAGE_TITLES[pageId] || PAGE_TITLES.home;
+      document.title = meta.title;
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.name = 'description';
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.content = meta.desc;
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Re-setup event listeners for new page content
+      setTimeout(() => {
+        setupLightboxEvents();
+        setupNewsEvents();
+        setupGalleryFilters();
+        setupNewsFilters();
+        setupVolunteerButton();
+        setupContactForm();
+      }, 50);
+    }
+
+    // ========== NAV EVENTS ==========
+    function setupNavEvents() {
+      document.addEventListener('click', (e) => {
+        const navBtn = e.target.closest('[data-nav]');
+        if (navBtn) {
+          e.preventDefault();
+          navigateTo(navBtn.dataset.nav);
+        }
+      });
+
+      document.getElementById('mobile-toggle').addEventListener('click', () => {
+        mobileMenuOpen = !mobileMenuOpen;
+        document.getElementById('mobile-nav').classList.toggle('open', mobileMenuOpen);
+        document.getElementById('mobile-toggle').setAttribute('aria-expanded', String(mobileMenuOpen));
+        updateMobileIcon(mobileMenuOpen);
+      });
+    }
+
+    function updateMobileIcon(isOpen) {
+      const icon = document.getElementById('mobile-toggle-icon');
+      if (isOpen) {
+        icon.innerHTML = '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>';
+      } else {
+        icon.innerHTML = '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>';
+      }
+    }
+
+    // ========== SCROLL EVENTS ==========
+    function setupScrollEvents() {
+      window.addEventListener('scroll', () => {
+        const isScrolled = window.scrollY > 24;
+        if (isScrolled !== scrolled) {
+          scrolled = isScrolled;
+          document.getElementById('site-header').classList.toggle('scrolled', scrolled);
+        }
+      }, { passive: true });
+    }
+
+    // ========== LIGHTBOX ==========
+    let lightboxOpen = false;
+
+    function setupLightboxEvents() {
+      // Trigger buttons
+      document.querySelectorAll('[data-lightbox]').forEach(btn => {
+        if (btn.dataset.lightboxSetup) return;
+        btn.dataset.lightboxSetup = 'true';
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const photoKey = btn.dataset.lightbox;
+          openLightbox(PHOTOS[photoKey]);
+        });
+      });
+
+      // Gallery cards
+      document.querySelectorAll('.gallery-card[data-lightbox]').forEach(card => {
+        if (card.dataset.cardSetup) return;
+        card.dataset.cardSetup = 'true';
+        card.addEventListener('click', () => {
+          openLightbox(PHOTOS[card.dataset.lightbox]);
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(PHOTOS[card.dataset.lightbox]);
+          }
+        });
+      });
+
+      // Close
+      const closeButton = document.getElementById('lightbox-close');
+      const modal = document.getElementById('lightbox-modal');
+      if (!closeButton.dataset.modalSetup) {
+        closeButton.dataset.modalSetup = 'true';
+        closeButton.addEventListener('click', closeLightbox);
+        modal.addEventListener('click', (e) => {
+          if (e.target === e.currentTarget) closeLightbox();
+        });
+      }
+    }
+
+    function openLightbox(photo) {
+      if (!photo) return;
+      lightboxOpen = true;
+      document.getElementById('lightbox-image-wrap').innerHTML = `<img src="${photo.src}" alt="${photo.alt}" class="modal-image-full" onerror="this.parentElement.innerHTML='<div class=&quot;img-fallback&quot;>${crestSVG('', 'lb-fallback')}<p class=&quot;fallback-title&quot;>${photo.title}</p></div>'">`;
+      document.getElementById('lightbox-body').innerHTML = `
+        <span class="modal-category">${photo.category}</span>
+        <h3 class="modal-title">${photo.title}</h3>
+        <p class="modal-caption">${photo.caption}</p>
+      `;
+      document.getElementById('lightbox-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxOpen = false;
+      document.getElementById('lightbox-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ========== NEWS MODAL ==========
+    let newsModalOpen = false;
+
+    function setupNewsEvents() {
+      document.querySelectorAll('[data-news-open]').forEach(btn => {
+        if (btn.dataset.newsSetup) return;
+        btn.dataset.newsSetup = 'true';
+        btn.addEventListener('click', () => {
+          const article = NEWS_EVENTS_DATA.find(n => n.id === btn.dataset.newsOpen);
+          if (article) openNewsModal(article);
+        });
+      });
+
+      const closeButton = document.getElementById('news-modal-close');
+      const modal = document.getElementById('news-modal');
+      if (!closeButton.dataset.modalSetup) {
+        closeButton.dataset.modalSetup = 'true';
+        closeButton.addEventListener('click', closeNewsModal);
+        modal.addEventListener('click', (e) => {
+          if (e.target === e.currentTarget) closeNewsModal();
+        });
+      }
+    }
+
+    function openNewsModal(article) {
+      newsModalOpen = true;
+      document.getElementById('news-modal-inner').innerHTML = `
+        <div class="modal-news-image">
+          ${imgHTML(article.photo, 'w-full h-full object-cover', '')}
+        </div>
+        <div class="modal-news-body">
+          <div class="news-modal-meta">
+            <span class="news-modal-type">${article.type}</span>
+            <span>${article.date}</span>
+            <span>•</span>
+            <span>${article.location}</span>
+          </div>
+          <h3>${article.title}</h3>
+          <p class="news-full-summary">${article.summary}</p>
+          <div class="news-full-content">${article.fullContent}</div>
+          <div class="modal-footer">
+            <button class="btn btn-dark" id="close-news-btn">Close Update</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('news-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('close-news-btn').addEventListener('click', closeNewsModal);
+    }
+
+    function closeNewsModal() {
+      newsModalOpen = false;
+      document.getElementById('news-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ========== VOLUNTEER MODAL ==========
+    function setupVolunteerModal() {
+      const modal = document.getElementById('volunteer-modal');
+      if (!modal.dataset.modalSetup) {
+        modal.dataset.modalSetup = 'true';
+        document.getElementById('volunteer-modal-close').addEventListener('click', () => {
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    }
+
+    function setupVolunteerButton() {
+      const btn = document.getElementById('open-volunteer-modal');
+      if (btn && !btn.dataset.volunteerSetup) {
+        btn.dataset.volunteerSetup = 'true';
+        btn.addEventListener('click', () => {
+          document.getElementById('volunteer-modal').classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      }
+    }
+
+    // ========== GALLERY FILTERS ==========
+    function setupGalleryFilters() {
+      const filterBar = document.getElementById('gallery-filters');
+      const grid = document.getElementById('gallery-grid');
+      if (!filterBar || !grid) return;
+      if (filterBar.dataset.filterSetup) return;
+      filterBar.dataset.filterSetup = 'true';
+
+      filterBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-filter]');
+        if (!btn) return;
+
+        filterBar.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const cat = btn.dataset.filter;
+        grid.querySelectorAll('.gallery-card').forEach(card => {
+          if (cat === 'All' || card.dataset.category === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // ========== NEWS FILTERS ==========
+    function setupNewsFilters() {
+      const filterGroup = document.getElementById('news-filters');
+      const grid = document.getElementById('news-grid');
+      if (!filterGroup || !grid) return;
+      if (filterGroup.dataset.filterSetup) return;
+      filterGroup.dataset.filterSetup = 'true';
+
+      filterGroup.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-news-filter]');
+        if (!btn) return;
+
+        filterGroup.querySelectorAll('.news-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.newsFilter;
+        grid.querySelectorAll('.news-card').forEach(card => {
+          if (filter === 'All' || card.dataset.newsType === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // ========== CONTACT FORM ==========
+    function setupContactForm() {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      if (form.dataset.setup) return;
+      form.dataset.setup = 'true';
+
+      const downloadButton = document.getElementById('download-inquiries');
+      if (downloadButton) {
+        downloadButton.addEventListener('click', downloadSavedInquiries);
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearFormErrors();
+
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const subject = document.getElementById('contact-subject').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+        const alertBox = document.getElementById('contact-form-alert');
+        alertBox.innerHTML = '';
+
+        let hasError = false;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (name.length < 2) {
+          showFieldError('name', 'Please enter your full name (at least 2 characters).');
+          hasError = true;
+        }
+        if (!emailPattern.test(email)) {
+          showFieldError('email', 'Please enter a valid email address.');
+          hasError = true;
+        }
+        if (!subject) {
+          showFieldError('subject', 'Please select or enter a subject for your inquiry.');
+          hasError = true;
+        }
+        if (message.length < 15) {
+          showFieldError('message', 'Please provide a brief message (at least 15 characters).');
+          hasError = true;
+        }
+
+        if (hasError) return;
+
+        const submitBtn = document.getElementById('contact-submit');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span style="display:inline-block;width:1rem;height:1rem;border:2px solid currentColor;border-top-color:transparent;border-radius:50%;animation:spin 0.6s linear infinite;"></span><span>Sending...</span>';
+
+        try {
+          await new Promise(r => setTimeout(r, 650));
+          saveInquiry({
+            name,
+            email,
+            subject,
+            message,
+            submittedAt: new Date().toISOString()
+          });
+          alertBox.innerHTML = `
+            <div class="alert alert-success">
+              ${ICONS['check-circle']}
+              <div><strong>Thank you for contacting Azazi Foundation!</strong><p>Your inquiry was saved on this device. Use “Download Saved Inquiries” to keep a copy.</p></div>
+            </div>
+          `;
+          form.reset();
+        } catch (err) {
+          alertBox.innerHTML = `
+            <div class="alert alert-error">
+              ${ICONS['alert-circle']}
+              <p>Your browser could not save this inquiry. Please allow local website storage and try again.</p>
+            </div>
+          `;
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `${ICONS['send']}<span>Send Message</span>`;
+        }
+      });
+    }
+
+    function saveInquiry(inquiry) {
+      const storageKey = 'azazi-foundation-inquiries';
+      let inquiries = [];
+
+      try {
+        const saved = localStorage.getItem(storageKey);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed)) inquiries = parsed;
+        }
+      } catch (err) {
+        inquiries = [];
+      }
+      inquiries.push(inquiry);
+      localStorage.setItem(storageKey, JSON.stringify(inquiries));
+    }
+
+    function downloadSavedInquiries() {
+      const storageKey = 'azazi-foundation-inquiries';
+      let inquiries = [];
+
+      try {
+        const saved = localStorage.getItem(storageKey);
+        if (saved) inquiries = JSON.parse(saved);
+      } catch (err) {
+        inquiries = [];
+      }
+
+      if (!inquiries.length) {
+        const alertBox = document.getElementById('contact-form-alert');
+        if (alertBox) {
+          alertBox.innerHTML = `
+            <div class="alert alert-error">
+              ${ICONS['alert-circle']}
+              <p>There are no saved inquiries to download.</p>
+            </div>
+          `;
+        }
+        return;
+      }
+
+      const blob = new Blob([JSON.stringify(inquiries, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'azazi-foundation-inquiries.json';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function showFieldError(field, msg) {
+      const errorEl = document.getElementById('error-' + field);
+      const inputEl = document.getElementById('contact-' + field);
+      if (errorEl) { errorEl.textContent = msg; errorEl.style.display = 'block'; }
+      if (inputEl) inputEl.classList.add('error');
+    }
+
+    function clearFormErrors() {
+      ['name', 'email', 'subject', 'message'].forEach(field => {
+        const errorEl = document.getElementById('error-' + field);
+        const inputEl = document.getElementById('contact-' + field);
+        if (errorEl) { errorEl.textContent = ''; errorEl.style.display = 'none'; }
+        if (inputEl) inputEl.classList.remove('error');
+      });
+    }
+
+    // ========== KEYBOARD EVENTS ==========
+    function setupKeyboardEvents() {
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (lightboxOpen) closeLightbox();
+          if (newsModalOpen) closeNewsModal();
+          document.getElementById('volunteer-modal').classList.remove('open');
+          document.body.style.overflow = '';
+          mobileMenuOpen = false;
+          document.getElementById('mobile-nav').classList.remove('open');
+          document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false');
+          updateMobileIcon(false);
+        }
+      });
+    }
+
+    // ========== SPIN ANIMATION ==========
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+    document.head.appendChild(styleSheet);
+
+    // ========== START ==========
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
